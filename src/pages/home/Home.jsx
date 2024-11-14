@@ -11,7 +11,7 @@ const Home = ({ }) => {
       <H.Home>
           <Header />
           <H.RowBox>
-
+            <H.Content>ProLink</H.Content>
           </H.RowBox>
       </H.Home>
     </>

@@ -10,7 +10,8 @@ const LoginAfterHome = ({ }) => {
       <H.Home>
           <LoginAfterHeader />
           <H.RowBox>
-
+            <H.Content>ProLink</H.Content>
+            <Button />
           </H.RowBox>
       </H.Home>
     </>
