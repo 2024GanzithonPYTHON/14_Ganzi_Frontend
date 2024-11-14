@@ -21,12 +21,13 @@ export const Logo = styled.h1`
 
 export const NavMenu = styled.div`
 	display: flex;
-	algin-items: center;
+	align-items: center;
 	gap: 30px;
 `;
 
 export const Tab = styled.div`
-	color: ${({ theme }) => theme.color.text};
+	color: ${({ theme, active }) =>
+		active ? theme.color.primary : theme.color.text};
 	font-family: 'Pretendard', sans-serif;
 	font-size: 18px;
 	font-style: normal;
@@ -38,7 +39,7 @@ export const Tab = styled.div`
 
 export const Tab2 = styled.div`
 	color: ${({ theme }) => theme.color.gray4};
-	ffont-family: 'Pretendard', sans-serif;
+	font-family: 'Pretendard', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
