@@ -1,6 +1,7 @@
 import React from 'react';
 import * as H from '../../styles/HomeStyle';
 import LoginAfterHeader from '../../components/Header/LoginAfterHeader';
+import Button from '../../components/button/Button';
 
 const LoginAfterHome = ({ }) => {
 
@@ -11,7 +12,7 @@ const LoginAfterHome = ({ }) => {
           <LoginAfterHeader />
           <H.RowBox>
             <H.Content>ProLink</H.Content>
-            <Button />
+            <Button/>
           </H.RowBox>
       </H.Home>
     </>

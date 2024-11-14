@@ -3,12 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import About from './pages/home/About';
 import Login from './pages/auth/Login';
-import LoginAfterHome from './pages/home/LoginAfterHome';
 import Create from './pages/create/Create';
 import Participate from './pages/participate/Participate';
 import Manage from './pages/manage/Manage';
 import MyPage from './pages/mypage/MyPage';
 import Logout from './pages/auth/Logout';
+import LoginAfterHome from './pages/home/LoginAfterHome';
 
 
 const AppRouter = ({ }) => {
