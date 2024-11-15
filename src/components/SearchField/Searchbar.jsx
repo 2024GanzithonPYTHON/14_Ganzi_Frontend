@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import {
-	Searchgroup,
-	Searchinput,
-	Typeselect,
-} from '../../styles/ContentStyles';
+import { Searchgroup, Typeselect } from '../../styles/ContentStyles';
+import SearchTyping from './SearchTyping';
 
 const Searchbar = () => {
 	const selectCategory = [
@@ -17,6 +14,7 @@ const Searchbar = () => {
 	const handleSelect = (e) => {
 		setSelected(e.target.value);
 	};
+
 	return (
 		<>
 			<Searchgroup>
@@ -27,7 +25,7 @@ const Searchbar = () => {
 						</option>
 					))}
 				</Typeselect>
-				<Searchinput type='text' placeholder='            검색어 입력' />
+				<SearchTyping />
 			</Searchgroup>
 		</>
 	);

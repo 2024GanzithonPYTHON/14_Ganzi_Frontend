@@ -28,12 +28,18 @@ export const Searchinput = styled.input`
 	border: none;
 	border-radius: 33.5px;
 	background-color: ${({ theme }) => theme.color.gray1};
-	color: ${({ theme }) => theme.color.gray4};
+	color: ${({ theme }) => theme.color.gray5};
 	font-size: 1.5rem;
-	font-weight: 600;
+	font-weight: 400;
 	background-image: url(${SearchIcon});
 	background-repeat: no-repeat;
 	background-position: left 20px center;
+	text-align: center;
+	text-indent: -55px;
+	&::placeholder {
+		color: ${({ theme }) => theme.color.gray4};
+		font-weight: 600;
+	}
 `;
 
 export const Searchbutton = styled.button`

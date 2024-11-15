@@ -26,8 +26,8 @@ export const NavMenu = styled.div`
 `;
 
 export const Tab = styled.div`
-	color: ${({ theme, active }) =>
-		active ? theme.color.primary : theme.color.text};
+	color: ${({ theme, $active }) =>
+		$active ? theme.color.primary : theme.color.text};
 	font-family: 'Pretendard', sans-serif;
 	font-size: 18px;
 	font-style: normal;

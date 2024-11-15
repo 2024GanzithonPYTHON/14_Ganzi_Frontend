@@ -39,19 +39,19 @@ const LoginAfterHeader = () => {
 		<LAHe.Header>
 			<LAHe.Logo onClick={handleHomeClick}>ProLink</LAHe.Logo>
 			<LAHe.NavMenu>
-				<LAHe.Tab onClick={handleCreateClick} active={activeTab === '/create'}>
+				<LAHe.Tab onClick={handleCreateClick} $active={activeTab === '/create'}>
 					프로젝트 생성
 				</LAHe.Tab>
 				<LAHe.Tab
 					onClick={handleParticipateClick}
-					active={activeTab === '/participate'}
+					$active={activeTab === '/participate'}
 				>
 					프로젝트 참여
 				</LAHe.Tab>
-				<LAHe.Tab onClick={handleManageClick} active={activeTab === '/manage'}>
+				<LAHe.Tab onClick={handleManageClick} $active={activeTab === '/manage'}>
 					프로젝트 관리
 				</LAHe.Tab>
-				<LAHe.Tab onClick={handleMyPageClick} active={activeTab === '/mypage'}>
+				<LAHe.Tab onClick={handleMyPageClick} $active={activeTab === '/mypage'}>
 					마이페이지
 				</LAHe.Tab>
 				<LAHe.Tab2 onClick={handleLogoutClick}>로그아웃</LAHe.Tab2>

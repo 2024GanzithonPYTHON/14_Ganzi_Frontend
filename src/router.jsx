@@ -9,22 +9,23 @@ import Manage from './pages/manage/Manage';
 import MyPage from './pages/mypage/MyPage';
 import Logout from './pages/auth/Logout';
 import LoginAfterHome from './pages/home/LoginAfterHome';
+import DetailRecruit from './pages/participate/DetailRecruit';
 
-
-const AppRouter = ({ }) => {
-    return (
-        <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/loginAfterHome' element={<LoginAfterHome/>} />
-            <Route path='/about' element={<About/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/logout' element={<Logout/>} />
-            <Route path='/create' element={<Create/>} />
-            <Route path='/participate' element={<Participate/>} />
-            <Route path='/manage' element={<Manage/>} />
-            <Route path='/mypage' element={<MyPage/>} />
-        </Routes>
-    )
+const AppRouter = () => {
+	return (
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='/loginAfterHome' element={<LoginAfterHome />} />
+			<Route path='/about' element={<About />} />
+			<Route path='/login' element={<Login />} />
+			<Route path='/logout' element={<Logout />} />
+			<Route path='/create' element={<Create />} />
+			<Route path='/participate' element={<Participate />} />
+			<Route path='/participate:projectID' element={<DetailRecruit />} />
+			<Route path='/manage' element={<Manage />} />
+			<Route path='/mypage' element={<MyPage />} />
+		</Routes>
+	);
 };
 
 export default AppRouter;
