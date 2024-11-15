@@ -46,3 +46,4 @@ export const Tab2 = styled.div`
 	line-height: normal;
 	cursor: pointer;
 `;
+

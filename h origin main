@@ -1,0 +1,18 @@
+*   [33m17faa2a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Merge branch 'dev' of https://github.com/2024GanzithonPYTHON/14_Ganzi_Frontend
+[31m|[m[32m\[m  
+[31m|[m * [33m31cd6ed[m[33m ([m[1;31mupstream/dev[m[33m)[m ✨Feat: 현재 위치에 따른 Header 탭 색상 변경 기능 추가
+[31m|[m * [33m63564ba[m ✨ Feat: Participate 프로젝트 참여 페이지 제작
+[31m|[m * [33meaeabd3[m 💄 Style: 공통 컴포넌트 및 공통 스타일링 수정
+[31m|[m *   [33m3d9d186[m Merge pull request #4 from SuKyeong2002/main
+[31m|[m [33m|[m[34m\[m  
+[31m|[m * [34m\[m   [33me0e6db5[m Merge pull request #2 from SuKyeong2002/main
+[31m|[m [35m|[m[36m\[m [34m\[m  
+* [35m|[m [36m|[m [34m|[m [33mc2cfebf[m :lipstick: Design: 메인홈 부분 디자인중(#5)
+[34m|[m [35m|[m[34m_[m[36m|[m[34m/[m  
+[34m|[m[34m/[m[35m|[m [36m|[m   
+* [35m|[m [36m|[m [33m5647975[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mfeature/main-home[m[33m)[m :lipstick: Style: 공통 컴포넌트 및 공통 스타일링 제작(#3)
+[36m|[m [35m|[m[36m/[m  
+[36m|[m[36m/[m[35m|[m   
+* [35m|[m [33m253af78[m :tada: Chore: 프로젝트 세팅 및 프로젝트 킥오프(#1)
+[35m|[m[35m/[m  
+* [33mcb8f71f[m[33m ([m[1;31mupstream/main[m[33m)[m Create README.md
