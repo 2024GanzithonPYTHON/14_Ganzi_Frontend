@@ -15,6 +15,7 @@ const ProjectList = () => {
 			start: '2024-11-10',
 			end: '2024-11-23',
 			nickname: '일사천리',
+			index: 1,
 		},
 		{
 			projectName: '2[사이드 프로젝트] 팀원 모집!',
@@ -27,6 +28,7 @@ const ProjectList = () => {
 			start: '2024-11-10',
 			end: '2024-11-23',
 			nickname: '일사천리',
+			index: 2,
 		},
 	];
 	const [projectData, setProjectData] = useState(mockData);
@@ -34,7 +36,11 @@ const ProjectList = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch('API_ENDPOINT');
+				const response = await fetch('API_ENDPOINT', {
+					headers: {
+						Accept: 'application/json',
+					},
+				});
 				const data = await response.json();
 				setProjectData(data);
 			} catch (error) {
