@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
-export const ProjectListRow = styled.div`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 3vw;
-	margin-top: 20px;
+export const ProjectListmain = styled.div`
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	/*background-color: red;*/
+`;
+export const ProjectListmainRow = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
 	justify-content: center;
 `;
 
@@ -13,7 +19,7 @@ export const SingleProjectdiv = styled.div`
 	border: 1px;
 	/*background-color: yellow;*/
 	background-color: ${({ theme }) => theme.color.gray1};
-	width: 555px;
+	width: 620px;
 	height: 310px;
 	display: flex;
 	flex-direction: column;
@@ -22,6 +28,16 @@ export const SingleProjectdiv = styled.div`
 	padding-left: 37px;
 	border: none;
 	border-radius: 25px;
+	cursor: pointer;
+	position: relative;
+`;
+
+export const ProjectListRow = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 3vw;
+	margin-top: 20px;
+	justify-content: center;
 `;
 
 export const Pprojectdate = styled.div`
@@ -51,6 +67,7 @@ export const PprojectContents = styled.div`
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 32px;
+	padding-right: 4rem;
 `;
 export const PprojectNickname = styled.div`
 	color: ${({ theme }) => theme.color.gray5};
