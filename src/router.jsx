@@ -9,6 +9,7 @@ import Manage from './pages/manage/Manage';
 import MyPage from './pages/mypage/MyPage';
 import Logout from './pages/auth/Logout';
 import DetailRecruit from './pages/participate/DetailRecruit';
+import Signup from './pages/auth/Signup';
 
 const AppRouter = () => {
 	return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
 			<Route path='/loginAfterHome' element={<LoginAfterHome />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/logout' element={<Logout />} />
+			<Route path='/signup' element={<Signup />} />
 			<Route path='/create' element={<Create />} />
 			<Route path='/participate' element={<Participate />} />
 			<Route path='/participate/:projectID' element={<DetailRecruit />} />

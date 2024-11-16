@@ -48,7 +48,7 @@ const CreateContents = () => {
   
 
   const handleClickLogin = () => {
-    navigate('/');
+    navigate('/loginAfterHome');
   };
 
   const handleLinkChange = (e) => {
