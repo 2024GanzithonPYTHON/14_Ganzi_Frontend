@@ -2,12 +2,11 @@ import React from 'react';
 import * as H from '../../styles/HomeStyle';
 import Header from '../../components/Header/HomeHeader';
 import HomeIcon from "../../assets/icons/HomeIcon.svg";
-import Button from '../../components/button/Button';
+import Button from '../../components/button/HomeButton';
 
 const Home = () => {
   return (
     <>
-      <H.Home>
         <Header />
         <H.RowBox>
           <H.IconBox>
@@ -21,7 +20,6 @@ const Home = () => {
         <H.ButtonBox>
           <Button />
         </H.ButtonBox>
-      </H.Home>
     </>
   );
 };
