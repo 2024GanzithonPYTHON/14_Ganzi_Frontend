@@ -1,7 +1,7 @@
 import React from 'react';
 import * as H from '../../styles/HomeStyle';
 import LoginAfterHeader from '../../components/Header/LoginAfterHeader';
-import Button from '../../components/button/Button';
+import Button from '../../components/button/HomeButton';
 import HomeIcon from "../../assets/icons/HomeIcon.svg";
 
 const LoginAfterHome = ({ }) => {
@@ -9,8 +9,7 @@ const LoginAfterHome = ({ }) => {
 
   return (
     <>
-      <H.Home>
-          <LoginAfterHeader />
+        <LoginAfterHeader/>
           <H.RowBox>
           <H.IconBox>
             <H.Icon src={HomeIcon} alt="Home Icon" />
@@ -23,7 +22,6 @@ const LoginAfterHome = ({ }) => {
           <H.ButtonBox>
           <Button />
         </H.ButtonBox>
-      </H.Home>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as B from '../../styles/ButtonStyle';
+import * as B from '../../styles/Button/ButtonStyle';
 
 const Button = () => {
 

@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LoginAfterHeader from '../../components/Header/LoginAfterHeader';
+import CreateContents from '../../components/contents/CreateContents';
 
-
-const Create = ({ }) => {
-
+const Create = () => {
 
   return (
     <>
-        <div>create 페이지입니다.</div>
+      <LoginAfterHeader />
+      <CreateContents />
     </>
-  )
-}
+  );
+};
 
 export default Create;

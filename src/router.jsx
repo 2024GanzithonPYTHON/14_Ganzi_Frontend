@@ -11,6 +11,7 @@ import Logout from './pages/auth/Logout';
 import LoginAfterHome from './pages/home/LoginAfterHome';
 import DetailRecruit from './pages/participate/DetailRecruit';
 
+
 const AppRouter = () => {
 	return (
 		<Routes>
