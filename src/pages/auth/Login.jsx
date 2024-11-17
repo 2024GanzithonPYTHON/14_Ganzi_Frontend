@@ -10,7 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
-    const [step, setStep] = useState(1); // 단계 상태 추가
+    const [step, setStep] = useState(1); 
     const navigate = useNavigate();
 
     const handleIdChange = (e) => setId(e.target.value);
@@ -19,7 +19,7 @@ const Login = () => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
         setIsSignup(false);
-        setStep(1); // 단계 초기화
+        setStep(1);
     };
 
     const handleLoginClick = () => {
@@ -35,7 +35,7 @@ const Login = () => {
 
             {isModalOpen && (
                 <LM.ModalOverlay>
-                    <LM.ModalContent isSignup={!isSignup}>
+                    <LM.ModalContent $isSignup={!isSignup}>
                         <LM.TitleContainer>
                             <LM.TextTitle>
                                 <LM.ModalTitle>{isSignup ? '회원가입' : '로그인'}</LM.ModalTitle>

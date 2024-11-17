@@ -15,11 +15,7 @@ const UserInformation = ({ }) => {
           <UI.UserIcon src={ProfileIcon} alt="Profile Icon" />
           <UI.UserEditIcon src={UserEditIcon} alt="UserEdit Icon" />
         </UI.IconContainer>
-        <UI.TemperatureContainer>
-            <UI.Temperature>
-              <UI.Present></UI.Present>
-            </UI.Temperature>
-          </UI.TemperatureContainer>
+        <UI.UserName>일사천리</UI.UserName>
       </UI.Container>
     </>
   )

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// 공통
+
 export const TitleBox = styled.div`
   display: flex;
   align-items: center;
@@ -37,12 +39,16 @@ export const Title = styled.div`
   margin-left: 12px; 
 `;
 
+// 아이콘
+
 export const Icon = styled.img`
   width: 45px;
   height: 45px;
   margin-left: 10px;
   cursor: pointer;
 `;
+
+// 입력창
 
 export const Input = styled.input`
   font-family: Pretendard;
@@ -107,6 +113,8 @@ export const IntroduceInput = styled.input`
   border: 1px solid ${({ theme }) => theme.color.gray4};
 `;
 
+// 셀렉트 
+
 export const SelectInput = styled.select`
   font-family: Pretendard;
   font-size: 16px;
@@ -119,6 +127,8 @@ export const SelectInput = styled.select`
   color: ${({ theme, value }) => (value ? theme.color.text : theme.color.gray4)};
   border: 1px solid ${({ theme }) => theme.color.gray4};
 `;
+
+// 라디오 버튼
 
 export const RadioGroup = styled.div`
   display: flex;
@@ -135,11 +145,70 @@ export const RadioGroup = styled.div`
     input {
       margin-right: 10px;
       &:checked {
-        accent-color: ${({ theme }) => theme.color.primary}; /* 체크 색상 */
+        accent-color: ${({ theme }) => theme.color.primary};
       }
     }
   }
 `;
+
+export const WithdrawRadioGroup = styled.div`
+  flex-direction: column;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+
+    @media (max-width: 1440px) {
+      margin: 50px 70px;
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      margin: 0 70px;
+       font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+
+  label {
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 25px; 
+      height: 25px;
+      border-radius: 50%;  
+      border: 2px solid ${({ theme }) => theme.color.text};  
+      appearance: none;  
+      background-color: #fff;  
+      margin-right: 10px;
+      cursor: pointer;
+      position: relative;
+
+      &:checked {
+        background-color: #fff;  
+        border-color: ${({ theme }) => theme.color.primary}; 
+      }
+
+      &:checked::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: ${({ theme }) => theme.color.primary};
+      }
+    }
+  }
+`;
+
+
 
 export const InputLink = styled.div`
   display: flex;

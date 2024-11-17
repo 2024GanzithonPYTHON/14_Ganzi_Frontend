@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 73px 460px;
+// 공통
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
 `;
+
+export const TitleContainer = styled.div`
+    display: flex;
+`;
+
 
 export const Title = styled.div`
     color: ${({ theme }) => theme.color.text};
@@ -17,11 +24,20 @@ export const Title = styled.div`
     line-height: normal;
 `;
 
+// 카테고리 부분
+
+export const ButtonContainer = styled.div`
+    display: flex;
+`;
+
 export const CategoryContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+    width: 100%;
+    margin: 32px;
 `;
 
 export const CategoryButton = styled.div`
@@ -33,7 +49,7 @@ export const CategoryButton = styled.div`
     font-weight: 600;
     line-height: normal;
     display: flex;
-    width: 25%;
+    width: 30%;
     height: 60%;
     padding: 19px 37px;
     margin-left: 10px;
@@ -51,7 +67,6 @@ export const CategoryButton = styled.div`
     }
 `;
 
-
 export const CategoryButton2 = styled.div`
     color: ${({ theme, isSelected }) => (isSelected ? '#fff' : theme.color.secondary1)};
     text-align: center;
@@ -61,7 +76,7 @@ export const CategoryButton2 = styled.div`
     font-weight: 600;
     line-height: normal;
     display: flex;
-    width: 40%;
+    width: 45%;
     height: 60%;
     padding: 19px 37px;
     margin-left: 10px;
@@ -77,4 +92,40 @@ export const CategoryButton2 = styled.div`
         color: #fff;
         transform: scale(1.1); 
     }
+`;
+
+// 회원탈퇴 부분
+
+export const WithdrawContainer = styled.div`
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+    width: 100%;
+    margin: 32px;
+`;
+
+export const SubTitle = styled.div`
+    color: ${({ theme }) => theme.color.text};
+    font-family: Pretendard;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+`;
+
+export const WithdrawButton = styled.button`
+    width: 100px;
+    height: 40px;
+    color: #FFF;
+    border: none;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 15px;
+    background-color: ${({ theme }) => theme.color.primary};
 `;

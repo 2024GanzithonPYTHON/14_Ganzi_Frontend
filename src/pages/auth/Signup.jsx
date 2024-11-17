@@ -8,6 +8,7 @@ const Signup = ({ handleClose, step, setStep }) => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [nickname, setNickname] = useState('');
+    const [isSignup, setIsSignup] = useState(false);
 
     const handleNameChange = (e) => setName(e.target.value);
     const handlePhoneChange = (e) => setPhone(e.target.value);
@@ -16,8 +17,9 @@ const Signup = ({ handleClose, step, setStep }) => {
     const handleNicknameChange = (e) => setNickname(e.target.value);
 
     const handleNextStep = () => {
-        if (step === 1) setStep(2); // 단계 2로 변경
+        if (step === 1) setStep(2); 
     };
+    
 
     const handleIdClick = () => alert('사용 가능한 아이디입니다.');
 
@@ -27,6 +29,7 @@ const Signup = ({ handleClose, step, setStep }) => {
                 <CategorySignup handleClose={handleClose} />
             ) : (
                 <>
+                <SM.ModalContent $isSignup={!isSignup}>
                     <SM.InputContainer>
                         <SM.Input 
                             type="text" 
@@ -66,6 +69,7 @@ const Signup = ({ handleClose, step, setStep }) => {
                     <SM.InputContainer>
                         <SM.Button onClick={handleNextStep}>다음</SM.Button>
                     </SM.InputContainer>
+                    </SM.ModalContent>
                 </>
             )}
         </>

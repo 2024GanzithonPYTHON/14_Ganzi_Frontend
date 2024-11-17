@@ -17,7 +17,6 @@ const CategorySignup = ({ handleClose }) => {
 
     const handleSignupClick = () => {
         window.alert('회원가입 완료!');
-        console.log("선택된 카테고리:", selectedCategories);
         handleClose();
     };
 

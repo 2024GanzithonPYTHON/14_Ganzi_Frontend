@@ -27,28 +27,6 @@ export const IconContainer = styled.div`
   }
 `;
 
-export const TemperatureContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  margin: 73px auto;
-`;
-
-export const Temperature = styled.div`
-    width: 675px;
-    height: 14px;
-    border-radius: 7px;
-    background-color: ${({ theme }) => theme.color.gray2};
-`;
-
-export const Present = styled.div`
-    width: 436px;
-    height: 14px;
-    border-radius: 7px;
-    background-color: ${({ theme }) => theme.color.secondary2};
-`;
 
 export const Title = styled.div`
   color: ${({ theme }) => theme.color.text};
@@ -69,6 +47,17 @@ export const Title = styled.div`
     font-size: 18px;
     margin: 15px 0 40px;
   }
+`;
+
+export const UserName = styled.div`
+  color: ${({ theme }) => theme.color.gray6};
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
 `;
 
 export const UserIcon = styled.img`
