@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import SingleProject from './SingleProject';
-import { ProjectListRow } from '../../styles/Partici_Mang/ProjectStyles';
 
-const ProjectList = () => {
+import { ManageListRow } from '../../styles/Partici_Mang/ManageStyles';
+import MSingleProject from './MSingleProject';
+
+const EndProjectlist = () => {
 	const [projectData, setProjectData] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					'https://run.mocky.io/v3/75740a2c-2522-4584-a9cb-b330526ff641',
+					'https://run.mocky.io/v3/4bf56b00-4f6b-4de1-9410-ae3936a4984d',
 					{
 						headers: {
 							Accept: 'application/json',
@@ -38,12 +39,12 @@ const ProjectList = () => {
 	}, []);
 
 	return (
-		<ProjectListRow>
+		<ManageListRow>
 			{projectData.map((project, index) => (
-				<SingleProject key={index} projectData={project} />
+				<MSingleProject key={index} projectData={project} />
 			))}
-		</ProjectListRow>
+		</ManageListRow>
 	);
 };
 
-export default ProjectList;
+export default EndProjectlist;

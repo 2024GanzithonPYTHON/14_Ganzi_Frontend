@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormTypeCompntText } from '../../styles/ModalFormStyle';
+import { FormTypeCompntText } from '../../styles/Modal/ModalFormStyle';
 
 export default function FormTypingText({ placeholder }) {
 	const onChange = (e) => {

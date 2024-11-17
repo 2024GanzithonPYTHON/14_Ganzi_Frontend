@@ -15,7 +15,7 @@ import {
 	Recruitlinkinfo,
 	Rincontentphoto,
 	RecruitInfoContent,
-} from '../../styles/RecruiteStyles';
+} from '../../styles/Partici_Mang/RecruiteStyles';
 import profilepic2 from '../../components/Participate/img/profilepic2.png';
 import urllink from '../../components/Participate/img/url-link.png';
 import FormApplyBTN from '../../components/Participate/Button/FormApplyBTN';

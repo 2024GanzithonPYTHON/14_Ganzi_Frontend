@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormTypeCompnt } from '../../styles/ModalFormStyle';
+import { FormTypeCompnt } from '../../styles/Modal/ModalFormStyle';
 
 export default function FormTypingURL({ placeholder }) {
 	const onChange = (e) => {

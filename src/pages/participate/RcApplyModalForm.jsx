@@ -5,7 +5,7 @@ import {
 	FormSubmitBTN,
 	ModalOverlay,
 	ModalQuitButton,
-} from '../../styles/ModalFormStyle';
+} from '../../styles/Modal/ModalFormStyle';
 import FormTypingURL from '../../components/Participate/FormTypingURL';
 import FormTypingText from '../../components/Participate/FormTypingText';
 

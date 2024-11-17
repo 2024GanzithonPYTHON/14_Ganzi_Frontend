@@ -55,6 +55,8 @@ export const PprojectContents = styled.div`
 	font-weight: 400;
 	line-height: 32px;
 	padding-right: 4rem;
+	min-height: 70px;
+	max-height: 80px;
 `;
 export const PprojectNickname = styled.div`
 	color: ${({ theme }) => theme.color.gray5};

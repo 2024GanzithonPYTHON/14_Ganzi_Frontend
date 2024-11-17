@@ -10,7 +10,7 @@ import {
 	PprojectTitle,
 	ProjectRow,
 	SingleProjectdiv,
-} from '../../styles/ProjectStyle';
+} from '../../styles/Partici_Mang/ProjectStyles';
 import ctrbutepic from './img/ctrbutepic.png';
 import Profilephoto2 from './img/profilepic2.png';
 

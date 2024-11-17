@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import SingleProject from './SingleProject';
-import { ProjectListRow } from '../../styles/Partici_Mang/ProjectStyles';
 
-const ProjectList = () => {
+import { ManageListRow } from '../../styles/Partici_Mang/ManageStyles';
+import MSingleProject from './MSingleProject';
+
+const ActiveProjectlist = () => {
 	const [projectData, setProjectData] = useState([]);
 
 	useEffect(() => {
@@ -38,12 +39,12 @@ const ProjectList = () => {
 	}, []);
 
 	return (
-		<ProjectListRow>
+		<ManageListRow>
 			{projectData.map((project, index) => (
-				<SingleProject key={index} projectData={project} />
+				<MSingleProject key={index} projectData={project} />
 			))}
-		</ProjectListRow>
+		</ManageListRow>
 	);
 };
 
-export default ProjectList;
+export default ActiveProjectlist;

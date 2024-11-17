@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PprojectProfilephoto } from './ProjectStyle';
+import { PprojectProfilephoto } from './ProjectStyles';
 
 export const LargeProfilePhoto = styled(PprojectProfilephoto)`
 	width: 60px;
