@@ -8,8 +8,6 @@ import {
 	PprojectNickname,
 	PprojectProfilephoto,
 	PprojectTitle,
-	ProjectListmain,
-	ProjectListmainRow,
 	ProjectRow,
 	SingleProjectdiv,
 } from '../../styles/ProjectStyle';
@@ -23,31 +21,27 @@ const SingleProject = ({ projectData }) => {
 	}
 
 	return (
-		<ProjectListmain>
-			<ProjectListmainRow>
-				<SingleProjectdiv
-					onClick={() => {
-						navigate(`/participate/${projectData.projectId}`);
-					}}
-				>
-					<Pprojectdate>마감일| {projectData.end}</Pprojectdate>
-					<ProjectRow>
-						<PprojectName>{projectData.projectName}</PprojectName>
-						<Pprojectctrb>
-							<Pprojectctrpic src={ctrbutepic} alt='모집인원아이콘' />
-							{projectData.nowConNum} / {projectData.contributorNum}
-						</Pprojectctrb>
-					</ProjectRow>
+		<SingleProjectdiv
+			onClick={() => {
+				navigate(`/participate/${projectData.projectId}`);
+			}}
+		>
+			<Pprojectdate>마감일| {projectData.end}</Pprojectdate>
+			<ProjectRow>
+				<PprojectName>{projectData.projectName}</PprojectName>
+				<Pprojectctrb>
+					<Pprojectctrpic src={ctrbutepic} alt='모집인원아이콘' />
+					{projectData.nowConNum} / {projectData.contributorNum}
+				</Pprojectctrb>
+			</ProjectRow>
 
-					<PprojectTitle>{projectData.title}</PprojectTitle>
-					<PprojectContents>{projectData.content}</PprojectContents>
-					<PprojectNickname>
-						<PprojectProfilephoto src={Profilephoto2} alt='프로필 사진' />
-						{projectData.nickName}
-					</PprojectNickname>
-				</SingleProjectdiv>
-			</ProjectListmainRow>
-		</ProjectListmain>
+			<PprojectTitle>{projectData.title}</PprojectTitle>
+			<PprojectContents>{projectData.content}</PprojectContents>
+			<PprojectNickname>
+				<PprojectProfilephoto src={Profilephoto2} alt='프로필 사진' />
+				{projectData.nickName}
+			</PprojectNickname>
+		</SingleProjectdiv>
 	);
 };
 

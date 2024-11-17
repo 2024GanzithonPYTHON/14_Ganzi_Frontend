@@ -15,10 +15,10 @@ import {
 	Recruitlinkinfo,
 	Rincontentphoto,
 	RecruitInfoContent,
-	ApplyBtn,
 } from '../../styles/RecruiteStyles';
 import profilepic2 from '../../components/Participate/img/profilepic2.png';
 import urllink from '../../components/Participate/img/url-link.png';
+import FormApplyBTN from '../../components/Participate/Button/FormApplyBTN';
 
 const DetailRecruit = () => {
 	const { projectID } = useParams();
@@ -45,6 +45,11 @@ const DetailRecruit = () => {
 	if (!recruite) {
 		return <div>Loading...</div>;
 	}
+
+	// * 프로젝트 정보를 표시하는 내부 컴포넌트
+	// * @param {Object} props - 컴포넌트 props
+	// * @param {string} props.title - 정보의 제목
+	// * @param {string} props.result - 정보의 내용
 
 	const Recruitinfo = ({ title, result }) => {
 		return (
@@ -113,9 +118,9 @@ const DetailRecruit = () => {
 						무엇보다 주제와 내용에 흥미가 있고 공감이 되야 한다고 생각합니다.
 						어떤 서비스를 만들고 있는지 자세히 설명을 들으시고 참여할지
 						결정하셔도 됩니다. 구글 meet을 통해 자세히 설명드리겠으니 들어보시고
-						결정하셔도 됩니다{' '}
+						결정하셔도 됩니다
 					</RecruitInfoContent>
-					<ApplyBtn>참여 신청하기</ApplyBtn>
+					<FormApplyBTN></FormApplyBTN>
 				</div>
 			</Rcontent>
 		</>

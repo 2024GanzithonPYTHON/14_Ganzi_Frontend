@@ -117,5 +117,5 @@ export const RecruitInfoContent = styled.div`
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 32px;
-	margin-bottom: 20vh;
+	margin-bottom: 10vh;
 `;
