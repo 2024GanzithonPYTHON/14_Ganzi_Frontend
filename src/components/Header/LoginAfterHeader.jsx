@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as LAHe from '../../styles/LoginAfterHeaderStyle';
+import Logout from '../../pages/auth/Logout';
 
 const LoginAfterHeader = () => {
 	const navigate = useNavigate();
@@ -31,10 +32,6 @@ const LoginAfterHeader = () => {
 		navigate('/mypage');
 	};
 
-	const handleLogoutClick = () => {
-		navigate('/logout');
-	};
-
 	return (
 		<LAHe.Header>
 			<LAHe.Logo onClick={handleHomeClick}>ProLink</LAHe.Logo>
@@ -54,7 +51,7 @@ const LoginAfterHeader = () => {
 				<LAHe.Tab onClick={handleMyPageClick} $active={activeTab === '/mypage'}>
 					마이페이지
 				</LAHe.Tab>
-				<LAHe.Tab2 onClick={handleLogoutClick}>로그아웃</LAHe.Tab2>
+					<Logout />
 			</LAHe.NavMenu>
 		</LAHe.Header>
 	);
