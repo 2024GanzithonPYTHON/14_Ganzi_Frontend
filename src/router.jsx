@@ -9,11 +9,8 @@ import Manage from './pages/manage/Manage';
 import MyPage from './pages/mypage/MyPage';
 import Logout from './pages/auth/Logout';
 import DetailRecruit from './pages/participate/DetailRecruit';
-<<<<<<< HEAD
 import Signup from './pages/auth/Signup';
-=======
 import RcApplyModalForm from './pages/participate/RcApplyModalForm';
->>>>>>> feature/create-modalform
 
 const AppRouter = () => {
 	return (
