@@ -1,23 +1,7 @@
 import styled from 'styled-components';
 
-export const ProjectListmain = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	/*background-color: red;*/
-`;
-export const ProjectListmainRow = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-	justify-content: center;
-`;
-
 export const SingleProjectdiv = styled.div`
 	border: 1px;
-	/*background-color: yellow;*/
 	background-color: ${({ theme }) => theme.color.gray1};
 	width: 620px;
 	height: 310px;
@@ -34,10 +18,13 @@ export const SingleProjectdiv = styled.div`
 
 export const ProjectListRow = styled.div`
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 620px);
+	column-gap: 5vw;
 	row-gap: 3vw;
-	margin-top: 20px;
 	justify-content: center;
+	padding: 20px;
+	margin: 0 auto;
+	max-width: 1300px;
 `;
 
 export const Pprojectdate = styled.div`

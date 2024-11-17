@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Searchgroup, Typeselect } from '../../styles/ContentStyles';
+import {
+	Dropdown,
+	DropdownItem,
+	DropdownList,
+	Searchgroup,
+	SelectedItem,
+} from '../../styles/ContentStyles';
 import SearchTyping from './SearchTyping';
 
 const Searchbar = () => {
@@ -10,21 +16,32 @@ const Searchbar = () => {
 		'기획/아이디어',
 		'대외활동',
 	];
-	const [Selected, setSelected] = useState('');
-	const handleSelect = (e) => {
-		setSelected(e.target.value);
+	const [selected, setSelected] = useState('카테고리별');
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleSelect = (item) => {
+		setSelected(item);
+		setIsOpen(false);
 	};
 
 	return (
 		<>
 			<Searchgroup>
-				<Typeselect onChange={handleSelect} value={Selected}>
-					{selectCategory.map((item) => (
-						<option value={item} key={item}>
-							{item}
-						</option>
-					))}
-				</Typeselect>
+				<Dropdown>
+					<SelectedItem onClick={() => setIsOpen(!isOpen)}>
+						{selected}
+						<span>▼</span>
+					</SelectedItem>
+					{isOpen && (
+						<DropdownList>
+							{selectCategory.map((item) => (
+								<DropdownItem key={item} onClick={() => handleSelect(item)}>
+									{item}
+								</DropdownItem>
+							))}
+						</DropdownList>
+					)}
+				</Dropdown>
 				<SearchTyping />
 			</Searchgroup>
 		</>

@@ -9,6 +9,7 @@ import Manage from './pages/manage/Manage';
 import MyPage from './pages/mypage/MyPage';
 import Logout from './pages/auth/Logout';
 import DetailRecruit from './pages/participate/DetailRecruit';
+import RcApplyModalForm from './pages/participate/RcApplyModalForm';
 
 const AppRouter = () => {
 	return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
 			<Route path='/create' element={<Create />} />
 			<Route path='/participate' element={<Participate />} />
 			<Route path='/participate/:projectID' element={<DetailRecruit />} />
+			<Route path='/form' element={<RcApplyModalForm />} />
 			<Route path='/manage' element={<Manage />} />
 			<Route path='/mypage' element={<MyPage />} />
 		</Routes>
