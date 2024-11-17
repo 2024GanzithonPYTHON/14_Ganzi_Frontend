@@ -1,75 +1,27 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
-    align-items: center;
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 73px 460px;
 `;
 
-export const Input = styled.input`
-    color: ${({ theme, value }) => (value ? theme.color.text : theme.color.gray4)}; 
-    font-family: Pretendard;
-    font-size: 22px;
-    font-weight: 500;
-    width: 490px;
-    height: 70px; 
-    padding: 0 22px; 
-    margin: 0 0 13px 60px;  
-    border: none;
-    border-radius: 12px;
-    background: ${({ theme }) => theme.color.gray1};
-    @media (max-width: 768px) {
-        width: 80%;
-        margin: 0 0 13px 10%;
-        font-size: 18px;
-    }
-`;
-
-export const Button = styled.button`
-    display: flex;
-    margin: 0 60px 76px;
-    display: flex;
-    width: 490px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: ${({ theme }) => theme.color.primary};
+export const Title = styled.div`
+    color: ${({ theme }) => theme.color.text};
     font-family: Pretendard;
     font-size: 24px;
-    font-weight: 500;
-    border-radius: 15px;
-    border: none;
-    &:hover {
-        background-color: ${({ theme }) => theme.color.primaryHover};
-    }
-`;
-
-export const TextContainer = styled.div`
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    margin: 0 60px 47px;
-    @media (max-width: 768px) {
-        margin: 0 30px 30px;
-    }
-`;
-
-export const Text = styled.div`
-    color: var(--gray5, #767E84);   
-    font-family: Pretendard;
-    font-size: 28px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
 `;
 
-export const ButtonContainer = styled.div`
-    display: flex;
-    margin: 15px 60px 15px;
-`;
-
 export const CategoryContainer = styled.div`
-    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const CategoryButton = styled.div`
