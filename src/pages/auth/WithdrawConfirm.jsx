@@ -1,44 +1,39 @@
 import React, { useState } from 'react';
 import * as CS from "../../styles/Modal/CategorySignupStyle";
 import * as SM from "../../styles/Modal/SignupStyle";
-import { useNavigate } from 'react-router-dom';
-import Category from '../../components/user/Category';
+import WithdrawSuccess from './WithdrawSuccess';
 
-const WithdrawConfirm = ({ handleClose }) => {
-    const [selectedCategories, setSelectedCategories] = useState([]);
-    const navigate = useNavigate();
-
+const WithdrawConfirm = ({ step, setStep }) => {
     const [password, setPassword] = useState('');
 
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
-    const toggleCategory = (category) => {
-        if (selectedCategories.includes(category)) {
-            setSelectedCategories(selectedCategories.filter((item) => item !== category));
-        } else {
-            setSelectedCategories([...selectedCategories, category]);
-        }
-    };
-
-    const handleSignupClick = () => {
-        window.alert('회원 탈퇴가 완료되었습니다.');
-        navigate('/');
+    const handleNextStep = () => {
+        if (step === 2) setStep(3);
     };
 
     return (
         <>
-            <CS.TextContainer>
-                <CS.WithdrawText>회원 탈퇴를 위해 비밀번호를 입력해 주세요.</CS.WithdrawText>
-            </CS.TextContainer>
-            <SM.InputContainer>
-                        <SM.Input 
-                            type="text" 
-                            placeholder="비밀번호" 
-                            value={password} 
-                            onChange={handlePasswordChange} 
+            {step === 3 ? (
+                <WithdrawSuccess />
+            ) : (
+                <>
+                    <CS.TextContainer>
+                        <CS.WithdrawText>
+                            회원 탈퇴를 위해 비밀번호를 입력해 주세요.
+                        </CS.WithdrawText>
+                    </CS.TextContainer>
+                    <SM.PInputContainer>
+                        <SM.PInput
+                            type="password"
+                            placeholder="비밀번호"
+                            value={password}
+                            onChange={handlePasswordChange}
                         />
-                    </SM.InputContainer>
-            <CS.NButton onClick={handleSignupClick}>다음으로</CS.NButton>
+                    </SM.PInputContainer>
+                    <CS.NButton onClick={handleNextStep}>다음으로</CS.NButton>
+                </>
+            )}
         </>
     );
 };

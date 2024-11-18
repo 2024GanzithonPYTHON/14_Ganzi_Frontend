@@ -20,25 +20,40 @@ export const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 2560px) {
+        width: ${({ isSignup }) => (isSignup ? "45%" : "40%")};  
+        height: ${({ isSignup }) => (isSignup ? "40%" : "80%")};  
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "25%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "75%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '25%' : '25%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '45%' : '80%')};
+    }
+
     @media (max-width: 1440px) {
         width: ${({ isSignup }) => (isSignup ? "45%" : "40%")};  
         height: ${({ isSignup }) => (isSignup ? "40%" : "80%")};  
         width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "40%")};  
         height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "80%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '40%' : '40%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '80%')};
     }
 
     @media (max-width: 1024px) {
         width: ${({ isSignup }) => (isSignup ? "45%" : "45%")};  
         height: ${({ isSignup }) => (isSignup ? "45%" : "50%")};  
-        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "45%")};  
-        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "65%")}; 
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "50%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "75%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '50%' : '45%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '65%')};
     }
 
     @media (max-width: 768px) {
         width: ${({ isSignup }) => (isSignup ? "40%" : "45%")};  
         height: ${({ isSignup }) => (isSignup ? "35%" : "45%")};  
-        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "60%")};  
-        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "60%")}; 
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "55%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "65%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '60%' : '55%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '60%')};
     }
 `;
 
@@ -48,7 +63,23 @@ export const TitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 60px 75px 26px;
+    margin: 60px 45px 26px;
+
+    @media (max-width: 2560px) {
+        margin: 60px 80px 26px;
+    }
+
+    @media (max-width: 1440px) {
+        margin: 60px 55px 26px;
+    }
+
+    @media (max-width: 1024px) {
+        margin: 60px 45px 26px;
+    }
+
+    @media (max-width: 768px) {
+        margin: 60px 45px 26px;
+    }
 `;
 
 export const InputContainer = styled.div`
@@ -152,4 +183,27 @@ export const Button = styled.button`
         background-color: ${({ theme }) => theme.color.primaryHover};
     }
 `;
+
+// 회원가입 버튼
+
+export const NButton = styled.button`
+    display: flex;
+    margin: 0 60px 76px;
+    width: 80%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: ${({ theme }) => theme.color.primary};
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 15px;
+    border: none;
+    &:hover {
+        background-color: ${({ theme }) => theme.color.primaryHover};
+    }
+`;
+
 

@@ -5,23 +5,57 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 80px;
+    align-items: flex-start;
+    justify-content: flex-start;
 `;
 
 export const TitleContainer = styled.div`
     display: flex;
+
+    @media (max-width: 2560px) {
+        margin-left: 36%;
+        margin-top: 1%;
+    }
+
+    @media (max-width: 1440px) {
+        margin-left: 26%;
+        margin-top: 5%;
+    }
+
+    @media (max-width: 1024px) {
+        margin-left: 15%;
+        margin-top: 3%;
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 4%;
+        margin-top: 5%;
+    }
 `;
 
 
 export const Title = styled.div`
     color: ${({ theme }) => theme.color.text};
     font-family: Pretendard;
-    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    @media (max-width: 2560px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 1440px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
 // 카테고리 부분
@@ -36,8 +70,8 @@ export const CategoryContainer = styled.div`
     align-items: center; 
     justify-content: center; 
     gap: 20px; 
-    width: 100%;
-    margin: 32px;
+    margin: 3% auto;
+
 `;
 
 export const CategoryButton = styled.div`
@@ -104,6 +138,32 @@ export const WithdrawContainer = styled.div`
     gap: 20px; 
     width: 100%;
     margin: 32px;
+`;
+
+export const WithdrawTitle = styled.div`
+    color: ${({ theme }) => theme.color.text};
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+
+    @media (max-width: 2560px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 1440px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
 export const SubTitle = styled.div`

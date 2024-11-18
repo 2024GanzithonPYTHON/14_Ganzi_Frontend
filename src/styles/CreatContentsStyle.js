@@ -158,6 +158,10 @@ export const WithdrawRadioGroup = styled.div`
   font-weight: 500;
   line-height: normal;
 
+    @media (max-width: 2560px) {
+      margin: 50px 70px;
+        font-size: 1.5rem;
+    }
 
     @media (max-width: 1440px) {
       margin: 50px 70px;

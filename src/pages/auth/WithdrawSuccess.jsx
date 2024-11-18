@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import * as CS from "../../styles/Modal/CategorySignupStyle";
 import { useNavigate } from 'react-router-dom';
-import Category from '../../components/user/Category';
 
-const CategorySignup = ({ handleClose }) => {
+const WithdrawSuccess = ({ handleClose }) => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const navigate = useNavigate();
+
+    const [password, setPassword] = useState('');
+
+    const handlePasswordChange = (e) => setPassword(e.target.value);
 
     const toggleCategory = (category) => {
         if (selectedCategories.includes(category)) {
@@ -15,22 +18,19 @@ const CategorySignup = ({ handleClose }) => {
         }
     };
 
-    const handleSignupClick = () => {
-        window.alert('회원가입 완료!');
-        handleClose();
+    const handleSuccessClick = () => {
+        window.alert('회원 탈퇴가 완료되었습니다.');
+        navigate('/');
     };
 
     return (
         <>
             <CS.TextContainer>
-                <CS.Text>선호하는 카테고리들을 골라주세요!</CS.Text>
+                <CS.WithdrawSuccessText>회원 탈퇴가 완료되었습니다.</CS.WithdrawSuccessText>
             </CS.TextContainer>
-            <CS.CategoryContainer>
-                <Category />
-            </CS.CategoryContainer>
-            <CS.NButton onClick={handleSignupClick}>가입하기</CS.NButton>
+            <CS.SButton onClick={handleSuccessClick}>메인 홈으로 가기</CS.SButton>
         </>
     );
 };
 
-export default CategorySignup;
+export default WithdrawSuccess;
