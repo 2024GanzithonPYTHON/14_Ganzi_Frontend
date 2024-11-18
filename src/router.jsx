@@ -11,6 +11,7 @@ import Logout from './pages/auth/Logout';
 import DetailRecruit from './pages/participate/DetailRecruit';
 import Signup from './pages/auth/Signup';
 import RcApplyModalForm from './pages/participate/RcApplyModalForm';
+import Edit from './pages/mypage/Edit';
 
 const AppRouter = () => {
 	return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
 			<Route path='/form' element={<RcApplyModalForm />} />
 			<Route path='/manage' element={<Manage />} />
 			<Route path='/mypage' element={<MyPage />} />
+			<Route path='/edit' element={<Edit />} />
 		</Routes>
 	);
 };

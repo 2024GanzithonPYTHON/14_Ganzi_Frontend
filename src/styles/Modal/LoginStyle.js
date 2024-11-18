@@ -14,28 +14,71 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
     background-color: white;
-    padding: 30px;
     border-radius: 60px;
-    width: 80%;
-    max-width: 650px;
-    height: ${({ isSignup }) => (isSignup ? "517px" : "742px")}; 
+    
     position: relative;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 2560px) {
+        width: ${({ isSignup }) => (isSignup ? "45%" : "40%")};  
+        height: ${({ isSignup }) => (isSignup ? "40%" : "80%")};  
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "25%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "75%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '25%' : '25%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '45%' : '80%')};
+    }
+
+    @media (max-width: 1440px) {
+        width: ${({ isSignup }) => (isSignup ? "45%" : "40%")};  
+        height: ${({ isSignup }) => (isSignup ? "40%" : "80%")};  
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "40%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "80%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '40%' : '40%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '80%')};
+    }
+
+    @media (max-width: 1024px) {
+        width: ${({ isSignup }) => (isSignup ? "45%" : "45%")};  
+        height: ${({ isSignup }) => (isSignup ? "45%" : "50%")};  
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "50%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "75%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '50%' : '45%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '65%')};
+    }
+
     @media (max-width: 768px) {
-        width: 90%;
-        height: ${({ isSignup }) => (isSignup ? "auto" : "auto")}; 
+        width: ${({ isSignup }) => (isSignup ? "40%" : "45%")};  
+        height: ${({ isSignup }) => (isSignup ? "35%" : "45%")};  
+        width: ${({ isWithdraw }) => (isWithdraw ? "40%" : "55%")};  
+        height: ${({ isWithdraw }) => (isWithdraw ? "35%" : "65%")}; 
+        width: ${({ $isSmall }) => ($isSmall ? '60%' : '55%')}; 
+        height: ${({ $isSmall }) => ($isSmall ? '40%' : '60%')};
     }
 `;
+
 
 
 export const TitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 60px 75px 26px;
+    margin: 60px 45px 26px;
+
+    @media (max-width: 2560px) {
+        margin: 60px 80px 26px;
+    }
+
+    @media (max-width: 1440px) {
+        margin: 60px 55px 26px;
+    }
+
+    @media (max-width: 1024px) {
+        margin: 60px 45px 26px;
+    }
+
     @media (max-width: 768px) {
-        margin: 40px 30px;
+        margin: 60px 45px 26px;
     }
 `;
 
@@ -55,9 +98,6 @@ export const ModalTitle = styled.div`
     font-size: 32px;
     font-weight: 600;
     line-height: normal;
-    @media (max-width: 768px) {
-        font-size: 24px;
-    }
 `;
 
 export const SubTitle = styled.div`
@@ -68,9 +108,6 @@ export const SubTitle = styled.div`
     font-weight: 600;
     line-height: normal;
     margin: 13px 10px;
-    @media (max-width: 768px) {
-        font-size: 24px;
-    }
 `;
 
 export const CloseButton = styled.button`
@@ -79,9 +116,6 @@ export const CloseButton = styled.button`
     color: ${({ theme }) => theme.color.gray4};
     font-size: 20px;
     cursor: pointer;
-    @media (max-width: 768px) {
-        font-size: 18px;
-    }
 `;
 
 export const Img = styled.img`
@@ -94,9 +128,6 @@ export const TextContainer = styled.div`
     align-items: start;
     justify-content: start;
     margin: 0 70px 47px;
-    @media (max-width: 768px) {
-        margin: 0 30px 30px;
-    }
 `;
 
 export const Text = styled.div`
@@ -131,11 +162,6 @@ export const Input = styled.input`
     border: none;
     border-radius: 12px;
     background: ${({ theme }) => theme.color.gray1};
-    @media (max-width: 768px) {
-        width: 80%;
-        margin: 0 0 13px 10%;
-        font-size: 18px;
-    }
 `;
 
 export const Button = styled.button`
@@ -156,9 +182,28 @@ export const Button = styled.button`
     &:hover {
         background-color: ${({ theme }) => theme.color.primaryHover};
     }
-    @media (max-width: 768px) {
-        width: 80%;
-        font-size: 16px;
-        margin: 0 10% 30px;
+`;
+
+// 회원가입 버튼
+
+export const NButton = styled.button`
+    display: flex;
+    margin: 0 60px 76px;
+    width: 80%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: ${({ theme }) => theme.color.primary};
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 15px;
+    border: none;
+    &:hover {
+        background-color: ${({ theme }) => theme.color.primaryHover};
     }
 `;
+
+

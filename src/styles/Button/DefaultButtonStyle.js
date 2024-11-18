@@ -17,5 +17,21 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.primary};
 `;
 
+export const EditButton = styled.button`
+    width: 197px;
+    height: 50px;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 60%;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 12px;
+    background-color: ${({ theme }) => theme.color.primary};
+`;
 
 
