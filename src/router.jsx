@@ -12,6 +12,7 @@ import DetailRecruit from './pages/participate/DetailRecruit';
 import Signup from './pages/auth/Signup';
 import RcApplyModalForm from './pages/participate/RcApplyModalForm';
 import Edit from './pages/mypage/Edit';
+import About from './pages/home/About';
 
 const AppRouter = () => {
 	return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
 			<Route path='/login' element={<Login />} />
 			<Route path='/logout' element={<Logout />} />
 			<Route path='/signup' element={<Signup />} />
+			<Route path='/about' element={<About />} />
 			<Route path='/create' element={<Create />} />
 			<Route path='/participate' element={<Participate />} />
 			<Route path='/participate/:projectID' element={<DetailRecruit />} />
@@ -28,6 +30,7 @@ const AppRouter = () => {
 			<Route path='/manage' element={<Manage />} />
 			<Route path='/mypage' element={<MyPage />} />
 			<Route path='/edit' element={<Edit />} />
+
 		</Routes>
 	);
 };

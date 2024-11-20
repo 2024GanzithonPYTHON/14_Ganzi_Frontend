@@ -14,8 +14,12 @@ export const RowBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 116px 79px 48px 157px;
+  padding: 30px 79px 48px 157px;
   gap: 79px;
+
+  @media (max-width: 2560px) {
+    padding: 30px 79px 48px 10%;
+  }
 `;
 
 export const IconBox = styled.div`
@@ -28,7 +32,22 @@ export const ContentBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 238px 238px 138px 0;
+
+  @media (max-width: 2560px) {
+    padding: 238px 238px 138px 0;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 238px 238px 138px 0;
+  }
+
+  @media (max-width: 1024) {
+    padding: 238px 238px 138px 0;
+  }
+
+  @media (max-width: 768) {
+    padding: 238px 238px 138px 0;
+  }
 `;
 
 export const ButtonBox = styled.div`
@@ -61,3 +80,11 @@ export const Icon = styled.img`
   width: 585px;
   height: 402px;
 `;
+
+export const AboutSection = styled.div`
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+`;
+
