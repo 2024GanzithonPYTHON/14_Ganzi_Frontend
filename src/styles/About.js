@@ -54,14 +54,13 @@ export const FeatContainer = styled.div`
 `;
 
 export const SubTitle2 = styled.div`
-    color: #94B2FF;
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    line-height: 350%;
+color: var(--text, #030027);
+text-align: center;
+font-family: Pretendard;
+font-size: 31px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
 `;
 
 // 3
