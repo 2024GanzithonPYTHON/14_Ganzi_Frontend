@@ -14,7 +14,7 @@ const HomeHeader = ({ onAboutClick }) => {
       <HHe.Header>
         <HHe.Logo onClick={handleHomeClick}>ProLink</HHe.Logo>
         <HHe.NavMenu>
-          <HHe.Tab onClick={onAboutClick}>ABOUT</HHe.Tab>
+          <HHe.Tab>ABOUT</HHe.Tab>
           <Login />
         </HHe.NavMenu>
       </HHe.Header>
