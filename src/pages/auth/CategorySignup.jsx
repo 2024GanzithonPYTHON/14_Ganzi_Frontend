@@ -3,21 +3,23 @@ import * as CS from "../../styles/Modal/CategorySignupStyle";
 import { useNavigate } from 'react-router-dom';
 import Category from '../../components/user/Category';
 
-const CategorySignup = ({ handleClose }) => {
-    const [selectedCategories, setSelectedCategories] = useState([]);
+const CategorySignup = ({ handleClose, setSelectedCategories }) => {
+    const [selectedCategoriesLocal, setSelectedCategoriesLocal] = useState([]); // 선택된 카테고리 상태
     const navigate = useNavigate();
 
     const toggleCategory = (category) => {
-        if (selectedCategories.includes(category)) {
-            setSelectedCategories(selectedCategories.filter((item) => item !== category));
+        if (selectedCategoriesLocal.includes(category)) {
+            setSelectedCategoriesLocal(selectedCategoriesLocal.filter((item) => item !== category));
         } else {
-            setSelectedCategories([...selectedCategories, category]);
+            setSelectedCategoriesLocal([...selectedCategoriesLocal, category]);
         }
     };
 
     const handleSignupClick = () => {
+        setSelectedCategories(selectedCategoriesLocal);
+
         window.alert('회원가입 완료!');
-        handleClose();
+        handleClose(); 
     };
 
     return (
@@ -26,7 +28,7 @@ const CategorySignup = ({ handleClose }) => {
                 <CS.Text>선호하는 카테고리들을 골라주세요!</CS.Text>
             </CS.TextContainer>
             <CS.CategoryContainer>
-                <Category />
+                <Category toggleCategory={toggleCategory} />
             </CS.CategoryContainer>
             <CS.NButton onClick={handleSignupClick}>가입하기</CS.NButton>
         </>

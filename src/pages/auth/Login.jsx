@@ -4,16 +4,17 @@ import * as LM from "../../styles/Modal/LoginStyle";
 import ButtonIcon from '../../assets/icons/Button.svg';
 import Signup from './Signup';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';  // axios 추가
 
 const Login = () => {
-    const [id, setId] = useState('');
+    const [loginId, setLoginId] = useState('');
     const [password, setPassword] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
-    const [step, setStep] = useState(1); 
+    const [step, setStep] = useState(1);
     const navigate = useNavigate();
 
-    const handleIdChange = (e) => setId(e.target.value);
+    const handleLoginIdChange = (e) => setLoginId(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
     const handleOpenClick = () => setIsModalOpen(true);
     const handleCloseModal = () => {
@@ -22,10 +23,57 @@ const Login = () => {
         setStep(1);
     };
 
-    const handleLoginClick = () => {
-        window.alert('로그인 완료!');
-        navigate('/loginAfterHome');
-    };
+    const handleLoginClick = async () => {
+        if (!loginId || !password) {
+          window.alert('아이디와 비밀번호를 입력해주세요.');
+          return;
+        }
+
+        console.log("로그인 요청 데이터:", { loginId, password });
+
+        try {
+          const response = await axios.post(
+            '/api/auth/login', 
+            {
+              loginId: loginId, 
+              password: password
+            },
+            {
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+
+          console.log("받은 데이터: ", response.data);
+
+          const { token } = response.data;
+          if (token) {
+            console.log("받은 토큰:", token);
+            localStorage.setItem('token', token);
+            window.alert('로그인 완료!');
+            navigate('/loginAfterHome'); 
+          }
+        } catch (error) {
+          console.error("로그인 실패:", error);
+          if (error.response) {
+            console.error("서버 응답:", error.response.data);  
+            console.error("상태 코드:", error.response.status);
+
+            if (error.response.status === 401) {
+              window.alert('아이디 또는 비밀번호가 잘못되었습니다.');
+            } else if (error.response.status === 403) {
+              window.alert('접근 권한이 없습니다.');
+            } else {
+              window.alert('로그인 중 오류가 발생했습니다.');
+            }
+          } else if (error.code === "ERR_NETWORK") {
+            console.error("네트워크 오류 발생");
+            window.alert('네트워크 오류가 발생했습니다.');
+          }
+        }
+      };
 
     const handleSignupClick = () => setIsSignup(true);
 
@@ -52,8 +100,8 @@ const Login = () => {
                                     <LM.Input 
                                         type="text" 
                                         placeholder="아이디" 
-                                        value={id} 
-                                        onChange={handleIdChange} 
+                                        value={loginId} 
+                                        onChange={handleLoginIdChange} 
                                     />
                                     <LM.Input 
                                         type="password" 
