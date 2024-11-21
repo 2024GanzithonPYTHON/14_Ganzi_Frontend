@@ -27,7 +27,7 @@ const About = () => {
           </A.SubContent>
           </A.Container>
           <A.FeatContainer>
-            <A.SubTitle2>“ProLink” 흠 뭐라고 쓰지</A.SubTitle2>
+            <A.SubTitle2>“ProLink” 의 기능을 소개합니다!</A.SubTitle2>
             <A.HomeContainer>
             <A.HomeMember>
               <A.MemberIcon src={HomeMemberIcon} alt="HomeMember Icon" />

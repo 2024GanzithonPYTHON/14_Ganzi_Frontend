@@ -82,9 +82,6 @@ export const Icon = styled.img`
 `;
 
 export const AboutSection = styled.div`
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #ddd;
+  margin-top: 5%;
 `;
 
