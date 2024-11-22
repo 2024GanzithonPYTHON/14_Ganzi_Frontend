@@ -16,12 +16,12 @@ const Signup = ({ handleClose, step, setStep }) => {
     const handlePhoneChange = (e) => setPhone(e.target.value);
     const handleIdChange = (e) => {
         setId(e.target.value);
-        setIsIdAvailable(false);  // 아이디 변경 시 중복 확인을 리셋
+        setIsIdAvailable(false);  
     };
     const handlePasswordChange = (e) => setPassword(e.target.value);
     const handleNicknameChange = (e) => {
         setNickname(e.target.value);
-        setIsNicknameAvailable(false);  // 닉네임 변경 시 중복 확인을 리셋
+        setIsNicknameAvailable(false);  
     };
 
     const validateForm = () => {
@@ -68,7 +68,7 @@ const Signup = ({ handleClose, step, setStep }) => {
 
                 if (response.status === 200) {
                     console.log("회원가입 1단계 성공", response.data);
-                    setStep(2);  // 2단계로 넘어감
+                    setStep(2); 
                 }
             } catch (error) {
                 alert("회원가입에 실패하셨습니다.");
