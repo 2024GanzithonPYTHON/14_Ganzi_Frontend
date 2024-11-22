@@ -9,7 +9,7 @@ const ProjectList = () => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					'https://run.mocky.io/v3/75740a2c-2522-4584-a9cb-b330526ff641',
+					'https://prolink123.store/api/all/project',
 					{
 						headers: {
 							Accept: 'application/json',

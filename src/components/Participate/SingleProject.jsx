@@ -26,12 +26,12 @@ const SingleProject = ({ projectData }) => {
 				navigate(`/participate/${projectData.projectId}`);
 			}}
 		>
-			<Pprojectdate>마감일| {projectData.end}</Pprojectdate>
+			<Pprojectdate>마감일| {projectData.deadLine}</Pprojectdate>
 			<ProjectRow>
 				<PprojectName>{projectData.projectName}</PprojectName>
 				<Pprojectctrb>
 					<Pprojectctrpic src={ctrbutepic} alt='모집인원아이콘' />
-					{projectData.nowConNum} / {projectData.contributorNum}
+					{projectData.nowConNum ?? 0} / {projectData.contributorNum}
 				</Pprojectctrb>
 			</ProjectRow>
 
