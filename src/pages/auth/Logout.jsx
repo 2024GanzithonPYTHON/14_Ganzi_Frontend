@@ -8,9 +8,9 @@ const Logout = () => {
 
   const handleLogoutClick = async () => {
     if (window.confirm("로그아웃 하시겠어요?")) {
-      const token = localStorage.getItem("token");
+      const accessToken = localStorage.getItem("accessToken");
 
-      if (!token) {
+      if (!accessToken) {
         window.alert("로그인이 필요합니다.");
         navigate("/");
         return;
@@ -23,7 +23,7 @@ const Logout = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${accessToken}`,
             },
           }
         );
@@ -36,7 +36,7 @@ const Logout = () => {
           window.alert("로그아웃 처리 중 오류가 발생했습니다.");
         }
       } finally {
-        localStorage.removeItem("token");
+        localStorage.removeItem("accessToken");
         navigate("/");
       }
     }
