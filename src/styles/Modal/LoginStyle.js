@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 `;
 
 export const ModalContent = styled.div`
@@ -206,4 +207,13 @@ export const NButton = styled.button`
     }
 `;
 
+export const ErrorMessage = styled.div`
+    color: ${({ theme }) => theme.color.error}; 
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: center;
+    visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};  
+`;
 

@@ -120,7 +120,17 @@ const CreateContents = () => {
         <C.IntroduceInput type="text" placeholder="프로젝트에 진행에 대한 상세한 설명을 적어주세요!" 
             value={introduce} onChange={handleIntroduceChange} />
       </C.DetailBox>
-      <DefaultButton/>
+      <DefaultButton 
+        projectName={title}
+        title={idea}
+        grade={"초급"} 
+        contributorNum={personnel}
+        category={category}
+        recruitmentPosition={position}
+        content={introduce}
+        deadLine={date}
+        link={link}
+/>
     </>
   );
 };

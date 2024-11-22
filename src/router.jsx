@@ -12,9 +12,12 @@ import DetailRecruit from './pages/participate/DetailRecruit';
 import Signup from './pages/auth/Signup';
 import RcApplyModalForm from './pages/participate/RcApplyModalForm';
 import Edit from './pages/mypage/Edit';
+
 import Mdetailpage from './pages/manage/Mdetailpage';
 import Introduceform from './pages/manage/Introduceform';
 import Calendar from './components/Manage/Mdetail/Schedule/calendar';
+
+import About from './pages/home/About';
 
 const AppRouter = () => {
 	return (
@@ -24,6 +27,7 @@ const AppRouter = () => {
 			<Route path='/login' element={<Login />} />
 			<Route path='/logout' element={<Logout />} />
 			<Route path='/signup' element={<Signup />} />
+			<Route path='/about' element={<About />} />
 			<Route path='/create' element={<Create />} />
 			<Route path='/participate' element={<Participate />} />
 			<Route path='/participate/:projectId' element={<DetailRecruit />} />

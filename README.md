@@ -5,3 +5,4 @@ npm install react-router-dom <br/>
 npm install styled-components <br/>
 npm install axios <br/>
 npm install styled-reset <br/>
+npm install swiper <br/>
