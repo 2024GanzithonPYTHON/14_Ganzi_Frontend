@@ -4,7 +4,7 @@ import * as LM from "../../styles/Modal/LoginStyle";
 import ButtonIcon from '../../assets/icons/Button.svg';
 import Signup from './Signup';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';  // axios 추가
+import axios from 'axios'; 
 
 const Login = () => {
     const [loginId, setLoginId] = useState('');

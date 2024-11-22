@@ -158,6 +158,35 @@ export const IdButton = styled.button`
     cursor: pointer;
 `;
 
+// Nickname 관련
+
+export const NicknameContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    margin-bottom: 13px;
+
+    @media (max-width: 768px) {
+        width: 97%;
+    }
+`;
+
+export const NicknameButton = styled.button`
+    background-color: ${({ theme }) => theme.color.gray3};
+    color: ${({ theme }) => theme.color.gray5};
+    border: none;
+    border-radius: 11px;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 0 15px;
+    width: 30%;
+    height: 70px; 
+    cursor: pointer;
+`;
+
 // Edit 관련
 
 export const IdEditContainer = styled.div`
