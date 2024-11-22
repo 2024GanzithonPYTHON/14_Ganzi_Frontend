@@ -48,11 +48,12 @@ const Login = () => {
 
           console.log("받은 데이터: ", response.data);
 
-          const { token } = response.data;
-          if (token) {
-            console.log("받은 토큰:", token);
-            localStorage.setItem('token', token);
+          const { accessToken } = response.data;
+          if (accessToken) {
+            console.log("받은 토큰:", accessToken);
+            localStorage.setItem('accessToken', accessToken);
             window.alert('로그인 완료!');
+            setIsModalOpen(false);
             navigate('/loginAfterHome'); 
           }
         } catch (error) {
