@@ -5,17 +5,17 @@ import Category from '../../components/user/Category';
 import axios from 'axios';
 
 const CategorySignup = ({ handleClose, previousData }) => {
-    const [selectedCategoriesLocal, setSelectedCategoriesLocal] = useState([]); // 선택된 카테고리 상태
+    const [selectedCategoriesLocal, setSelectedCategoriesLocal] = useState([]); 
     const navigate = useNavigate();
 
     const handleSignupClick = async () => {
         try {
             const requestData = {
-                ...previousData,  // 이전 데이터(이름, 전화번호, 아이디 등)
-                category: selectedCategoriesLocal,  // 선택한 카테고리 배열
+                ...previousData,  
+                category: selectedCategoriesLocal, 
             };
             
-            console.log("Request Data: ", requestData);  // 요청 데이터 출력하여 확인
+            console.log("Request Data: ", requestData); 
     
             const response = await axios.post(`/api/auth/signup`, requestData);
     
@@ -37,7 +37,6 @@ const CategorySignup = ({ handleClose, previousData }) => {
                 <CS.Text>선호하는 카테고리들을 골라주세요!</CS.Text>
             </CS.TextContainer>
             <CS.CategoryContainer>
-                {/* setSelectedCategoriesLocal을 Category 컴포넌트에 전달 */}
                 <Category setSelectedCategories={setSelectedCategoriesLocal} />
             </CS.CategoryContainer>
             <CS.NButton onClick={handleSignupClick}>가입하기</CS.NButton>
