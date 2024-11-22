@@ -11,7 +11,7 @@ import {
 } from '../../styles/Partici_Mang/IntroFormStyles';
 import ButtonIcon from '../../assets/icons/Button.svg';
 
-const Introduceform = ({ onClose }) => {
+const Introduceform = ({ careerUrl, content, onClose }) => {
 	return (
 		<ModalOverlay>
 			<ModalForm>
@@ -19,10 +19,9 @@ const Introduceform = ({ onClose }) => {
 					자기소개서
 					<InfoQuitButton src={ButtonIcon} onClick={onClose} />
 				</ModalBodyTitle>
-				<IntroFormLinkText>
-					placeholder={'개인 경력 주소 (ex: LinkedIn)'}
-				</IntroFormLinkText>
-				<IntroFormCompntText />
+				<IntroFormLinkText>{careerUrl}</IntroFormLinkText>
+				{/* content 표시 */}
+				<IntroFormCompntText>{content}</IntroFormCompntText>
 			</ModalForm>
 		</ModalOverlay>
 	);

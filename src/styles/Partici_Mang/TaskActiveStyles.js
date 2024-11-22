@@ -6,6 +6,7 @@ export const Managecontent = styled.div`
 	display: flex;
 	margin-top: 88px;
 `;
+
 export const Managenav = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -43,7 +44,8 @@ export const TaskActiveproject = styled.button`
 	cursor: pointer;
 	padding: 10px 20px;
 	border-bottom: ${({ $active, theme }) =>
-		$active ? `${theme.color.primary}` : 'none'}; // 활성화된 탭에 밑줄 표시
+		$active ? `2px solid ${theme.color.primary}` : 'none'}; /* 밑줄 두께 강조 */
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
 `;
 export const TaskEndproject = styled.button`
 	width: 10ch;
@@ -64,7 +66,8 @@ export const TaskEndproject = styled.button`
 	cursor: pointer;
 	padding: 10px 20px;
 	border-bottom: ${({ $active, theme }) =>
-		$active ? ` ${theme.color.primary}` : 'none'}; // 활성화된 탭에 밑줄 표시
+		$active ? `2px solid ${theme.color.primary}` : 'none'}; /* 밑줄 두께 강조 */
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
 `;
 
 export const MprojectProfilephoto = styled.img`
@@ -126,9 +129,12 @@ export const TCprojectNickname = styled.div``;
 export const TCprojectTitle = styled.div`
 	font-size: 26px;
 	font-weight: 600;
-	margin-top: ${({ $marginTop, theme }) => ($marginTop ? [$marginTop] : '0px')};
-	margin-bottom: ${({ $marginBottom, theme }) =>
-		$marginBottom ? [$marginBottom] : '0px'};
+	margin-top: ${({ $marginTop }) => ($marginTop ? $marginTop : '0px')};
+	margin-bottom: ${({ $marginBottom }) =>
+		$marginBottom ? $marginBottom : '0px'};
+	text-transform: capitalize; /* 첫 글자 대문자 처리 */
+	letter-spacing: 0.5px; /* 글자 간격 추가 */
+	color: ${({ theme }) => theme.color.gray6};
 `;
 
 export const TeamMemberText = styled.span`
@@ -138,6 +144,7 @@ export const TeamMemberText = styled.span`
 	font-size: 2.162vh;
 	color: ${({ theme }) => theme.color.gray6};
 	justify-content: flex-start;
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
 `;
 
 export const TeamCrewdiv2 = styled.div`
@@ -193,10 +200,12 @@ export const ApplyButton = styled.button`
 		$textColor === 'white' ? 'white' : theme.color.text};
 	padding: 4px 12px;
 	border: none;
-	border-radius: 4px;
+	border-radius: 8px; /* 둥근 모서리로 변경 */
 	cursor: pointer;
+	transition: all 0.3s ease; /* 부드러운 전환 효과 */
 
 	&:hover {
 		filter: brightness(0.9);
+		transform: scale(1.05); /* hover 시 크기 살짝 증가 */
 	}
 `;

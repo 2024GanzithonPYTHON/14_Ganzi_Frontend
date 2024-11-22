@@ -56,7 +56,7 @@ const AIMeeting = () => {
 			<Div4>
 				<AiList meetingData={meetingData} />
 			</Div4>
-			{/*<GptComment>{meetingId.gptComment}</GptComment>*/}
+
 			<FloatingIcon
 				src={GPTICON}
 				alt='GPT_floating_Icon'

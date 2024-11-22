@@ -129,7 +129,7 @@ export const DMProjectRow = styled.div`
 export const LeaderPhoto = styled.img`
 	width: 28px;
 	height: 28px;
-	padding-left: 20px;
+	margin-left: 28px;
 	overflow: hidden;
 `;
 

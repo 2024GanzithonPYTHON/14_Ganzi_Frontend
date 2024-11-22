@@ -110,5 +110,49 @@ export const ChatInput = styled.div`
 	display: flex;
 `;
 export const SendingButton = styled.button`
+	width: 98px;
+	height: 68px;
+	align-content: center;
+	align-items: center;
 	margin: auto;
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: 24px;
+	border: none;
+	border-radius: 15px;
+	color: ${({ theme }) => theme.color.gray4};
+	background-color: ${({ theme }) => theme.color.gray1};
+
+	&:hover {
+		background-color: ${({ theme }) => theme.color.primary};
+		color: #fff;
+	}
+`;
+
+export const ModalOverlay = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const ModalForm = styled.div`
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const ModalBodyTitle = styled.div`
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
 `;

@@ -8,11 +8,11 @@ export const IntroFormLinkText = styled.div`
 	margin: auto;
 	padding-left: 22px;
 	border-radius: 15px;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
 	margin-bottom: 24px;
 	align-items: center;
-	color: ${({ theme }) => theme.color.gray4};
+	color: ${({ theme }) => theme.color.text};
 	background-color: ${({ theme }) => theme.color.gray1};
 `;
 export const IntroFormCompntText = styled.div`
@@ -23,10 +23,12 @@ export const IntroFormCompntText = styled.div`
 	margin: auto;
 	padding-left: 22px;
 	border-radius: 15px;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
 	margin-bottom: 24px;
-	color: ${({ theme }) => theme.color.gray4};
+	padding-top: 20px;
+	line-height: 50px;
+	color: ${({ theme }) => theme.color.text};
 	background-color: ${({ theme }) => theme.color.gray1};
 `;
 

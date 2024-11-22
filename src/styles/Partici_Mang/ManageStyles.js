@@ -5,8 +5,8 @@ export const MSingleProjectdiv = styled.div`
 	/*background-color: red;*/
 	background-color: ${({ theme }) => theme.color.gray1};
 	width: 543px;
-	height: 250px;
-	max-height: 290px;
+	height: 300px;
+	max-height: 300px;
 	display: flex;
 	flex-direction: column;
 	gap: 18px;
@@ -16,6 +16,11 @@ export const MSingleProjectdiv = styled.div`
 	border-radius: 25px;
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	&:hover {
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* hover 시 그림자 강화 */
+	}
 `;
 
 export const ManageListRow = styled.div`
