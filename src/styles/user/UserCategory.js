@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 // 공통
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,7 +32,6 @@ export const TitleContainer = styled.div`
     }
 `;
 
-
 export const Title = styled.div`
     color: ${({ theme }) => theme.color.text};
     font-family: Pretendard;
@@ -59,7 +57,6 @@ export const Title = styled.div`
 `;
 
 // 카테고리 부분
-
 export const ButtonContainer = styled.div`
     display: flex;
 `;
@@ -71,11 +68,10 @@ export const CategoryContainer = styled.div`
     justify-content: center; 
     gap: 20px; 
     margin: 3% auto;
-
 `;
 
 export const CategoryButton = styled.div`
-    color: ${({ theme, isSelected }) => (isSelected ? '#fff' : theme.color.gray4)};
+    color: ${({ theme, isSelected }) => (isSelected ? '#fff' : theme.color.gray4)}; /* 선택된 버튼 텍스트 색 */
     text-align: center;
     font-family: Pretendard;
     font-size: 26px;
@@ -92,8 +88,8 @@ export const CategoryButton = styled.div`
     flex-shrink: 0;
     border-radius: 59px;
     cursor: pointer;
-    background: ${({ theme, isSelected }) => (isSelected ? theme.color.primary : theme.color.gray1)};
-    transition: all 0.3s ease-in-out; 
+    background: ${({ theme, isSelected }) => (isSelected ? theme.color.primary : theme.color.gray1)}; /* 선택된 버튼 배경 색 */
+    transition: all 0.3s ease-in-out;
     &:hover {
         background: ${({ theme, isSelected }) => (isSelected ? theme.color.primary : theme.color.primary)};
         transform: scale(1.1); 
@@ -102,7 +98,7 @@ export const CategoryButton = styled.div`
 `;
 
 export const CategoryButton2 = styled.div`
-    color: ${({ theme, isSelected }) => (isSelected ? '#fff' : theme.color.secondary1)};
+    color: ${({ theme, isSelected }) => (isSelected ? '#fff' : theme.color.secondary1)}; /* 선택된 버튼 텍스트 색 */
     text-align: center;
     font-family: Pretendard;
     font-size: 26px;
@@ -119,8 +115,8 @@ export const CategoryButton2 = styled.div`
     flex-shrink: 0;
     border-radius: 59px;
     cursor: pointer;
-    background: ${({ theme, isSelected }) => (isSelected ? theme.color.primary : theme.color.secondary3)};
-    transition: all 0.3s ease-in-out; 
+    background: ${({ theme, isSelected }) => (isSelected ? theme.color.primary : theme.color.secondary3)}; /* 선택된 버튼 배경 색 */
+    transition: all 0.3s ease-in-out;
     &:hover {
         background: ${({ theme }) => theme.color.primary};
         color: #fff;
@@ -129,7 +125,6 @@ export const CategoryButton2 = styled.div`
 `;
 
 // 회원탈퇴 부분
-
 export const WithdrawContainer = styled.div`
     display: flex;
     flex-direction: column; 
@@ -189,3 +184,4 @@ export const WithdrawButton = styled.button`
     border-radius: 15px;
     background-color: ${({ theme }) => theme.color.primary};
 `;
+
