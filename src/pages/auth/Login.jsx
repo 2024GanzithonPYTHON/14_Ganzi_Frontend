@@ -33,7 +33,7 @@ const Login = () => {
 
         try {
           const response = await axios.post(
-            'https://prolink123.store/api/auth/login', 
+            '/api/auth/login', 
             {
               loginId: loginId, 
               password: password
