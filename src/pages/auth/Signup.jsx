@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import * as SM from "../../styles/Modal/SignupStyle";
-import CategorySignup from './CategorySignup';
 
-const Signup = ({ handleClose, step, setStep }) => {
+const Signup = ({ handleClose, setStep }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [id, setId] = useState('');
@@ -55,24 +54,24 @@ const Signup = ({ handleClose, step, setStep }) => {
             return;
         }
 
-        if (step === 1) {
-            try {
-                const response = await axios.post(`/api/auth/signup`, {
-                    loginId: id,
-                    password: password,
-                    userName: name,
-                    nickName: nickname,
-                    number: phone,
-                    category: [],
-                });
+        try {
+            const response = await axios.post(`/api/auth/signup`, {
+                loginId: id,
+                password: password,
+                userName: name,
+                nickName: nickname,
+                number: phone,
+                category: [],  // 빈 배열로 카테고리 없이 요청
+            });
 
-                if (response.status === 200) {
-                    console.log("회원가입 1단계 성공", response.data);
-                    setStep(2); 
-                }
-            } catch (error) {
-                alert("회원가입에 실패하셨습니다.");
+            if (response.status === 200) {
+                console.log("회원가입 성공", response.data);
+                alert("회원가입이 완료되었습니다.");
+                handleClose();  // 모달 닫기
             }
+        } catch (error) {
+            console.error("회원가입 실패", error);
+            alert("회원가입에 실패하였습니다. 다시 시도해주세요.");
         }
     };
 
@@ -107,57 +106,47 @@ const Signup = ({ handleClose, step, setStep }) => {
     };
 
     return (
-        <>
-            {step === 2 ? (
-                <CategorySignup
-                    handleClose={handleClose}
-                    setStep={setStep}
-                    previousData={{ name, phone, id, password, nickname }}
+        <SM.ModalContent $isSignup={true}>
+            <SM.InputContainer>
+                <SM.Input
+                    type="text"
+                    placeholder="이름"
+                    value={name}
+                    onChange={handleNameChange}
                 />
-            ) : (
-                <SM.ModalContent $isSignup={true}>
-                    <SM.InputContainer>
-                        <SM.Input
-                            type="text"
-                            placeholder="이름"
-                            value={name}
-                            onChange={handleNameChange}
-                        />
-                        <SM.Input
-                            type="tel"
-                            placeholder="전화번호"
-                            value={phone}
-                            onChange={handlePhoneChange}
-                        />
-                        <SM.IdContainer>
-                            <SM.IdInput
-                                type="text"
-                                placeholder="아이디"
-                                value={id}
-                                onChange={handleIdChange}
-                            />
-                            <SM.IdButton onClick={handleIdClick}>중복확인</SM.IdButton>
-                        </SM.IdContainer>
-                        <SM.Input
-                            type="password"
-                            placeholder="비밀번호"
-                            value={password}
-                            onChange={handlePasswordChange}
-                        />
-                        <SM.NicknameContainer>
-                            <SM.Input
-                                type="text"
-                                placeholder="닉네임"
-                                value={nickname}
-                                onChange={handleNicknameChange}
-                            />
-                            <SM.NicknameButton onClick={handleNicknameClick}>중복확인</SM.NicknameButton>
-                        </SM.NicknameContainer>
-                    </SM.InputContainer>
-                    <SM.Button onClick={handleNextStep}>다음</SM.Button>
-                </SM.ModalContent>
-            )}
-        </>
+                <SM.Input
+                    type="tel"
+                    placeholder="전화번호"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                />
+                <SM.IdContainer>
+                    <SM.IdInput
+                        type="text"
+                        placeholder="아이디"
+                        value={id}
+                        onChange={handleIdChange}
+                    />
+                    <SM.IdButton onClick={handleIdClick}>중복확인</SM.IdButton>
+                </SM.IdContainer>
+                <SM.Input
+                    type="password"
+                    placeholder="비밀번호"
+                    value={password}
+                    onChange={handlePasswordChange}
+                />
+                <SM.NicknameContainer>
+                    <SM.Input
+                        type="text"
+                        placeholder="닉네임"
+                        value={nickname}
+                        onChange={handleNicknameChange}
+                    />
+                    <SM.NicknameButton onClick={handleNicknameClick}>중복확인</SM.NicknameButton>
+                </SM.NicknameContainer>
+            </SM.InputContainer>
+            <SM.Button onClick={handleNextStep}>가입하기</SM.Button>
+        </SM.ModalContent>
     );
 };
 
