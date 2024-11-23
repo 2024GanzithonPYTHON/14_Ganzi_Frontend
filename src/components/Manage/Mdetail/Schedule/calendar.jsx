@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './calendarstyles.css';
-//import './calendarstyle2.css';
 
-const Calendar = () => {
+const Calendar = ({ projectId }) => {
+	console.log('Received Project ID:', projectId);
 	const [date, setDate] = useState(new Date());
 	const [activeDay, setActiveDay] = useState(null);
 	const [month, setMonth] = useState(date.getMonth());
@@ -161,10 +161,11 @@ const Calendar = () => {
 		}
 	};
 
-	const addEvent = () => {
+	const addEvent = async () => {
 		const eventName = eventTitleRef.current.value;
 		const startDate = eventStartDateRef.current.value;
 		const endDate = eventEndDateRef.current.value;
+		const token = localStorage.getItem('accessToken');
 
 		if (eventName === '' || startDate === '' || endDate === '') {
 			alert('Please fill all fields');
@@ -176,37 +177,58 @@ const Calendar = () => {
 			return;
 		}
 
-		const newEvent = {
-			title: eventName,
-			startDate,
-			endDate,
-			day: activeDay,
-			month: month + 1,
-			year: year,
-		};
+		try {
+			if (!projectId) {
+				throw new Error('Project Id is not provided');
+			}
 
-		const newEvents = [...events];
-		const eventExists = events.findIndex(
-			(event) =>
-				event.title === eventName &&
-				event.startDate === startDate &&
-				event.endDate === endDate
-		);
+			// API 요청을 위한 데이터 구성
+			const taskData = {
+				description: eventName,
+				start: startDate,
+				end: endDate,
+			};
 
-		if (eventExists >= 0) {
-			alert('Event already exists');
-			return;
+			// API 호출
+			const response = await fetch(`/api/project/${projectId}/task`, {
+				method: 'POST',
+				headers: {
+					Authorization: `Bearer ${token}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(taskData),
+			});
+
+			if (!response.ok) {
+				throw new Error('Failed to create task');
+			}
+
+			const responseData = await response.json();
+
+			// 로컬 상태 업데이트
+			const newEvent = {
+				title: eventName,
+				startDate,
+				endDate,
+				day: activeDay,
+				month: month + 1,
+				year: year,
+				id: responseData.id,
+			};
+
+			const newEvents = [...events, newEvent];
+			saveEvents(newEvents);
+			setIsEventContainerActive(false);
+
+			eventTitleRef.current.value = '';
+			eventStartDateRef.current.value = '';
+			eventEndDateRef.current.value = '';
+
+			updateSelectedDayEvents(activeDay);
+		} catch (error) {
+			console.error('할일 생성 에러 발생', error);
+			alert('Failed to create task. Please try again.');
 		}
-
-		newEvents.push(newEvent);
-		saveEvents(newEvents);
-		setIsEventContainerActive(false);
-
-		eventTitleRef.current.value = '';
-		eventStartDateRef.current.value = '';
-		eventEndDateRef.current.value = '';
-
-		updateSelectedDayEvents(activeDay);
 	};
 
 	const updateSelectedDayEvents = (day) => {
@@ -254,21 +276,22 @@ const Calendar = () => {
 		if (eventEndDateRef.current) eventEndDateRef.current.value = event.endDate;
 	};
 
-	const handleDeleteEvent = (event) => {
-		// Confirm before deleting the event
-		if (window.confirm('Are you sure you want to delete this event?')) {
-			// Filter out the deleted event from the events array
-			const newEvents = events.filter(
-				(e) =>
-					e.title !== event.title ||
-					e.startDate !== event.startDate ||
-					e.endDate !== event.endDate
-			);
+	//const handleDeleteEvent = (event) => {
+	//	// Confirm before deleting the event
+	//	if (window.confirm('일정을 지우시겠습니까?')) {
+	//		// Filter out the deleted event from the events array
+	//		const newEvents = events.filter(
+	//			(e) =>
+	//				e.title !== event.title ||
+	//				e.startDate !== event.startDate ||
+	//				e.endDate !== event.endDate
+	//		);
 
-			// Save the updated events list to state and localStorage
-			saveEvents(newEvents);
-		}
-	};
+	//		// Save the updated events list to state and localStorage
+	//		saveEvents(newEvents);
+	//	}
+	//};
+
 	return (
 		<div className='container'>
 			<div className='left'>
@@ -353,14 +376,14 @@ const Calendar = () => {
 										className='edit-btn'
 										onClick={() => handleEditEvent(event)}
 									>
-										수정하기
+										수정
 									</button>
-									<button
+									{/*<button
 										className='delete-btn'
 										onClick={() => handleDeleteEvent(event)}
 									>
 										Delete
-									</button>
+									</button>*/}
 								</div>
 							</div>
 						))

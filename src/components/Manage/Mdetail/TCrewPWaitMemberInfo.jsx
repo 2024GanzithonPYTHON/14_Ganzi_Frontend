@@ -64,7 +64,9 @@ const TCrewPWaitMemberInfo = ({ projectApplyMember, onAccept, onDelete }) => {
 								<ApplyButton
 									$bcolor='primary'
 									$textColor='white'
-									onClick={() => onAccept(member.userProjectId)} // 수락 동작
+									onClick={() =>
+										onAccept(member.userProjectId, member.nickName)
+									} // userProjectId와 nickName 전달
 								>
 									수락
 								</ApplyButton>

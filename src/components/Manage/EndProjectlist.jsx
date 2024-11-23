@@ -1,50 +1,52 @@
 import React, { useEffect, useState } from 'react';
-
+import axios from 'axios';
 import { ManageListRow } from '../../styles/Partici_Mang/ManageStyles';
 import MSingleProject from './MSingleProject';
 
-const EndProjectlist = () => {
+const ActiveProjectlist = () => {
 	const [projectData, setProjectData] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
+			const token = localStorage.getItem('accessToken'); // LocalStorage에서 토큰 가져오기
+
+			if (!token) {
+				console.error('토큰이 없습니다. 다시 로그인 해주세요.');
+				return;
+			}
+
 			try {
-				const response = await fetch(
-					'https://run.mocky.io/v3/f0f0261a-e077-4c98-95b0-b1ad96153cf7',
-					{
-						headers: {
-							Accept: 'application/json',
-						},
-					}
-				);
-				const data = await response.json();
-				console.log('받은 데이터:', data);
-				//데이터 구조 확인
-				// 데이터 형식에 따른 조건 확인
-				// 데이터 형식에 따른 조건 확인
-				if (Array.isArray(data)) {
-					// data 자체가 배열일 경우
-					setProjectData(data);
-				} else if (data.projectData && Array.isArray(data.projectData)) {
-					// projectData 속성이 배열일 경우
-					setProjectData(data.projectData);
+				const baseURL = 'https://prolink123.store';
+				const response = await axios.get(`${baseURL}/api/project/end`, {
+					headers: {
+						Authorization: `Bearer ${token}`, // LocalStorage에서 가져온 토큰 사용
+						'Content-Type': 'application/json',
+					},
+				});
+
+				console.log('받은 데이터:', response.data);
+
+				// 데이터 상태 업데이트
+				if (Array.isArray(response.data)) {
+					setProjectData(response.data);
 				} else {
-					console.error('Unexpected data format:', data);
+					console.error('Unexpected data format:', response.data);
 				}
 			} catch (error) {
 				console.error('Error fetching Project data: ', error);
 			}
 		};
+
 		fetchData();
 	}, []);
 
 	return (
 		<ManageListRow>
-			{projectData.map((project, index) => (
-				<MSingleProject key={index} projectData={project} />
+			{projectData.map((project) => (
+				<MSingleProject key={project.projectId} projectData={project} />
 			))}
 		</ManageListRow>
 	);
 };
 
-export default EndProjectlist;
+export default ActiveProjectlist;
