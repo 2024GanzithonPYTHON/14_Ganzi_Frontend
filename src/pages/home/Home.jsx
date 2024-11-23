@@ -8,8 +8,8 @@ import About from '../../pages/home/About';
 const Home = () => {
 
   return (
-    <>
-      <Header/> 
+    <H.Home>
+      <Header /> 
       <H.RowBox>
         <H.IconBox>
           <H.Icon src={HomeIcon} alt="Home Icon" />
@@ -22,11 +22,12 @@ const Home = () => {
       <H.ButtonBox>
         <Button />
       </H.ButtonBox>
-        <H.AboutSection>
-          <About />
-        </H.AboutSection>
-    </>
+      <H.AboutSection>
+        <About />
+      </H.AboutSection>
+    </H.Home>
   );
+  
 };
 
 export default Home;
