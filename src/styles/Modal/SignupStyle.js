@@ -300,3 +300,20 @@ export const PhoneText = styled.div`
     line-height: normal;
     margin: 11px 0 22px;
 `;
+
+
+export const SaveButton = styled.button`
+  background-color: #ff6347; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e5533d;
+  }
+`;
+
+
