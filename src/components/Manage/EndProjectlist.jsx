@@ -10,7 +10,7 @@ const EndProjectlist = () => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					'https://run.mocky.io/v3/4bf56b00-4f6b-4de1-9410-ae3936a4984d',
+					'https://run.mocky.io/v3/f0f0261a-e077-4c98-95b0-b1ad96153cf7',
 					{
 						headers: {
 							Accept: 'application/json',

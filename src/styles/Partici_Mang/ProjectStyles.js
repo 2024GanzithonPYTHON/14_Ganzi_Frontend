@@ -47,6 +47,10 @@ export const PprojectName = styled.div`
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 29px;
+	overflow: hidden; /* 텍스트가 넘칠 때 숨김 처리 */
+	text-overflow: ellipsis; /* 넘친 텍스트를 ...으로 표시 */
+	white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+	width: 20ch; /* 12글자만 표시 */
 	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 가벼운 텍스트 그림자 추가 */
 `;
 

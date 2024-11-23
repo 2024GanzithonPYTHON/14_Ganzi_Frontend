@@ -29,13 +29,17 @@ body {
 
 .container {
 	position: relative;
-	width: 1500px;
-	min-height: 950px;
-	margin: 0 auto;
+	width: 60vw;
+	min-height: 600px;
+	margin: 0;
+	margin-left: 50px;
+	gap: 100px;
 	padding: 5px;
 	color: #fff;
 	display: flex;
 	border-radius: 10px;
+	display: flex;
+	justify-content: center;
 }
 .month {
 	margin-top: 30px;
@@ -213,6 +217,7 @@ body {
 	align-items: center;
 	border-radius: 5px;
 	overflow: hidden;
+	white-space: nowrap;
 	border: 1px solid var(--primary-clr);
 }
 

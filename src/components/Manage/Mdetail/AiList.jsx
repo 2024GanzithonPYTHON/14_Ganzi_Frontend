@@ -22,16 +22,16 @@ const AiList = ({ meetingData }) => {
 	return (
 		<AiListContainer>
 			{meetingData.map((list) => (
-				<MeetingItem key={list.meetingId}>
-					<MeetingTitle onClick={() => toggleItem(list.meetingId)}>
-						{list.title}
-
-						<span>{showItem[list.meetingId] ? '▲' : '▼'}</span>
+				<MeetingItem key={list.userId}>
+					<MeetingTitle onClick={() => toggleItem(list.userId)}>
+						{list.userId}번째 회의
+						<span>{showItem[list.userId] ? '▲' : '▼'}</span>
 					</MeetingTitle>
-					{showItem[list.meetingId] && (
+					{showItem[list.userId] && (
 						<MeetingDetails>
 							<AiListstyle>
 								<li>내용: {list.content}</li>
+								<li>gpt 내용: {list.gptComment}</li>
 							</AiListstyle>
 						</MeetingDetails>
 					)}

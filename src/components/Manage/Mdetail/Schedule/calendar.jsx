@@ -375,7 +375,7 @@ const Calendar = () => {
 				{isEventContainerActive && (
 					<div className='add-event-wrapper active'>
 						<div className='add-event-header'>
-							<div className='title'>Add Event</div>
+							<div className='title'>일정 추가하기</div>
 							<span
 								className='close'
 								onClick={() => setIsEventContainerActive(false)}
@@ -409,7 +409,7 @@ const Calendar = () => {
 						</div>
 						<div className='add-event-footer'>
 							<button className='add-event-btn' onClick={addEvent}>
-								Add Event
+								일정 추가하기
 							</button>
 						</div>
 					</div>

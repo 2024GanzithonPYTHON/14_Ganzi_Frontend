@@ -13,16 +13,21 @@ import axios from 'axios';
 import ButtonIcon from '../../assets/icons/Button.svg';
 
 const GptModal = ({ onClose, projectId }) => {
-	const [inputText, setInputText] = useState(''); // 사용자가 입력한 값
+	const [inputText, setInputText] = useState('주제: '); // 기본값 설정
 	const [chatResult, setChatResult] = useState(''); // 서버 응답 데이터
+	const [data, setData] = useState([]); // 전달된 값을 저장할 데이터 상태
 
 	const handleInputChange = (event) => {
-		setInputText(event.target.value); // 입력값 업데이트
+		const value = event.target.value;
+
+		// 입력값이 "주제: "로 시작하지 않으면 다시 "주제: "로 설정
+		setInputText(value.startsWith('주제: ') ? value : '주제: ');
 	};
 
 	const handleSendClick = async () => {
-		if (!inputText.trim()) {
-			alert('입력값이 비어 있습니다.');
+		// 입력값 검사
+		if (inputText.trim() === '주제:') {
+			alert('내용을 입력해주세요.');
 			return;
 		}
 
@@ -31,18 +36,25 @@ const GptModal = ({ onClose, projectId }) => {
 			const response = await axios.post(
 				`/api/project/${projectId}/meeting/chat`,
 				{
-					message: inputText,
+					message: inputText.replace('주제: ', ''), // "주제: "를 제외하고 전송
 				}
 			);
 
 			console.log('서버 응답:', response.data);
 
 			// 응답 데이터 저장 및 표시
-			setChatResult(response.data.result || '결과 없음');
-			setInputText(''); // 입력창 비우기
+			const result = response.data.result || '결과 없음';
+			setChatResult(result);
+			setData((prevData) => [...prevData, { input: inputText, result }]); // 전달된 값 저장
+			setInputText('주제: '); // 입력창 초기화
+
+			// 모달창 자동 닫기
+			alert('전송 완료!');
+			onClose();
 		} catch (error) {
 			console.error('Error sending chat:', error);
 			alert('채팅 전송에 실패했습니다.');
+			onClose();
 		}
 	};
 
@@ -50,19 +62,17 @@ const GptModal = ({ onClose, projectId }) => {
 		<ModalOverlay>
 			<ModalForm>
 				<ModalBodyTitle>
-					참가 신청하기
 					<GptQuitButton src={ButtonIcon} onClick={onClose} />
 				</ModalBodyTitle>
 
 				{/* 상단에 입력값 또는 서버 결과 표시 */}
 				<GptFormCompntText>
-					{chatResult || inputText || '여기에 결과가 표시됩니다.'}
+					{chatResult || '여기에 결과가 표시됩니다.'}
 				</GptFormCompntText>
 
 				{/* 입력창 및 전송 버튼 */}
 				<ChatInput>
 					<GptinputChatText
-						placeholder='채팅창 입력'
 						value={inputText}
 						onChange={handleInputChange} // 입력값 업데이트
 					/>

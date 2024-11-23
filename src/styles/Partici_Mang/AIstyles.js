@@ -66,12 +66,12 @@ export const GptComment = styled.div`
 `;
 
 export const GptFormCompntText = styled.div`
-	width: 468px;
+	width: 540px;
 	height: 419px;
 	display: flex;
 	border: none;
 	margin: auto;
-	padding-left: 22px;
+	padding: 22px;
 	border-radius: 15px;
 	font-size: 22px;
 	font-weight: 500;
@@ -88,15 +88,17 @@ export const GptQuitButton = styled.img`
 	cursor: pointer;
 	width: 40px;
 	height: 40px;
+	display: grid;
+	justify-content: flex-end;
 `;
 
 export const GptinputChatText = styled.input`
-	width: 468px;
+	width: 460px;
 	height: 70px;
 	display: flex;
 	border: none;
 	margin: auto;
-	padding-left: 22px;
+	padding-left: 24px;
 	border-radius: 15px;
 	font-size: 22px;
 	font-weight: 500;
@@ -108,9 +110,10 @@ export const GptinputChatText = styled.input`
 
 export const ChatInput = styled.div`
 	display: flex;
+	width: 568px;
 `;
 export const SendingButton = styled.button`
-	width: 98px;
+	width: 78px;
 	height: 68px;
 	align-content: center;
 	align-items: center;
@@ -149,10 +152,8 @@ export const ModalForm = styled.div`
 `;
 
 export const ModalBodyTitle = styled.div`
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 20px;
 	display: flex;
-	justify-content: space-between;
-	padding: 20px;
+	justify-content: right; /* 왼쪽과 오른쪽으로 배치 */
+	align-items: center; /* 세로 가운데 정렬 */
+	padding: 20px 16px; /* 좌우 여백 추가 */
 `;

@@ -16,6 +16,7 @@ export const MDNAV = styled.div`
 	width: fit-content;
 	/*background-color: red;*/
 	gap: 88px;
+	margin-left: 200px;
 	padding-top: 66px;
 	align-content: center;
 `;
@@ -105,7 +106,7 @@ export const TeamCrewdiv = styled.div`
 	/*background-color: red;*/
 	gap: 10px;
 	right: 0;
-	width: 985px;
+	width: 60vw;
 	height: auto;
 	padding: 20px;
 	border: none;

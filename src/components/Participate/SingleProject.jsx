@@ -26,7 +26,7 @@ const SingleProject = ({ projectData }) => {
 				navigate(`/participate/${projectData.projectId}`);
 			}}
 		>
-			<Pprojectdate>마감일| {projectData.deadLine}</Pprojectdate>
+			<Pprojectdate>마감일| {projectData.end}</Pprojectdate>
 			<ProjectRow>
 				<PprojectName>{projectData.projectName}</PprojectName>
 				<Pprojectctrb>
