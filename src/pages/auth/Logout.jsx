@@ -1,7 +1,7 @@
 import React from 'react';
 import * as LAHe from '../../styles/LoginAfterHeaderStyle';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../axiosConfig';
 
 const Logout = () => {
   const navigate = useNavigate();

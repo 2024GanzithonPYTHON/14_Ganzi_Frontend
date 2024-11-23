@@ -33,7 +33,7 @@ const Login = () => {
 
         try {
           const response = await axios.post(
-            '/api/auth/login', 
+            'https://prolink123.store/api/auth/login', 
             {
               loginId: loginId, 
               password: password
@@ -43,6 +43,7 @@ const Login = () => {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
               },
+              withCredentials: true
             }
           );
 
