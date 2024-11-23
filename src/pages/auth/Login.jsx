@@ -55,7 +55,7 @@ const Login = () => {
 				localStorage.setItem('accessToken', accessToken);
 				window.alert('로그인 완료!');
 				setIsModalOpen(false);
-				navigate('/loginAfterHome');
+				navigate('/participate');
 			}
 		} catch (error) {
 			console.error('로그인 실패:', error);

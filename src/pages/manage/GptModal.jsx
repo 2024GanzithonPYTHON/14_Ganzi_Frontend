@@ -15,7 +15,6 @@ import ButtonIcon from '../../assets/icons/Button.svg';
 const GptModal = ({ onClose, projectId }) => {
 	const [inputText, setInputText] = useState('주제: '); // 기본값 설정
 	const [chatResult, setChatResult] = useState(''); // 서버 응답 데이터
-	const [data, setData] = useState([]); // 전달된 값을 저장할 데이터 상태
 
 	const handleInputChange = (event) => {
 		const value = event.target.value;
@@ -34,9 +33,14 @@ const GptModal = ({ onClose, projectId }) => {
 		try {
 			// API 요청 보내기
 			const response = await axios.post(
-				`/api/project/${projectId}/meeting/chat`,
+				`/api/project/${projectId}/meeting`,
 				{
 					message: inputText.replace('주제: ', ''), // "주제: "를 제외하고 전송
+				},
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
 				}
 			);
 
@@ -45,7 +49,6 @@ const GptModal = ({ onClose, projectId }) => {
 			// 응답 데이터 저장 및 표시
 			const result = response.data.result || '결과 없음';
 			setChatResult(result);
-			setData((prevData) => [...prevData, { input: inputText, result }]); // 전달된 값 저장
 			setInputText('주제: '); // 입력창 초기화
 
 			// 모달창 자동 닫기

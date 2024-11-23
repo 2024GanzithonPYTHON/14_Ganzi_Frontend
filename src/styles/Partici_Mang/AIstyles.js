@@ -4,7 +4,7 @@ export const Div4 = styled.div`
 	height: fit-content;
 `;
 export const AiListstyle = styled.div`
-	background-color: gray;
+	/*background-color: gray;*/
 	width: 1;
 	height: fit-content;
 	margin-bottom: 30px;
@@ -25,7 +25,7 @@ export const AiListContainer = styled.div`
 
 export const MeetingItem = styled.div`
 	padding: 10px 0;
-	margin-bottom: 54px;
+	margin-bottom: 52px;
 	align-items: center;
 `;
 
@@ -59,7 +59,7 @@ export const FloatingIcon = styled.img`
 	cursor: pointer;
 `;
 export const GptComment = styled.div`
-	margin-top: 5px;
+	/*margin-top: 25px;*/
 	color: #444;
 	bottom: 50px;
 	font-size: 24px;
@@ -156,4 +156,14 @@ export const ModalBodyTitle = styled.div`
 	justify-content: right; /* 왼쪽과 오른쪽으로 배치 */
 	align-items: center; /* 세로 가운데 정렬 */
 	padding: 20px 16px; /* 좌우 여백 추가 */
+`;
+
+export const AiListperson = styled.div`
+	margin-top: 10px;
+	line-height: 40px;
+`;
+
+export const AiListGPT = styled.div`
+	margin-top: 30px;
+	line-height: 40px;
 `;
