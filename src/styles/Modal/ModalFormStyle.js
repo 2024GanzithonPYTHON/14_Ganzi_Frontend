@@ -96,7 +96,7 @@ export const ModalButton = styled.button`
 	font-weight: 600;
 	cursor: pointer;
 `;
-export const ModalQuitButton = styled.button`
+export const ModalQuitButton = styled.img`
 	font-size: 40px;
 	line-height: 0px;
 	border-style: none;

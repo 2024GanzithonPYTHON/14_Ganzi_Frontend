@@ -12,6 +12,11 @@ import DetailRecruit from './pages/participate/DetailRecruit';
 import Signup from './pages/auth/Signup';
 import RcApplyModalForm from './pages/participate/RcApplyModalForm';
 import Edit from './pages/mypage/Edit';
+
+import Mdetailpage from './pages/manage/Mdetailpage';
+import Introduceform from './pages/manage/Introduceform';
+import Calendar from './components/Manage/Mdetail/Schedule/calendar';
+
 import About from './pages/home/About';
 
 const AppRouter = () => {
@@ -25,12 +30,14 @@ const AppRouter = () => {
 			<Route path='/about' element={<About />} />
 			<Route path='/create' element={<Create />} />
 			<Route path='/participate' element={<Participate />} />
-			<Route path='/participate/:projectID' element={<DetailRecruit />} />
+			<Route path='/participate/:projectId' element={<DetailRecruit />} />
 			<Route path='/form' element={<RcApplyModalForm />} />
+			<Route path='/introduceform' element={<Introduceform />} />
 			<Route path='/manage' element={<Manage />} />
+			<Route path='/managedetail/:projectId' element={<Mdetailpage />} />
 			<Route path='/mypage' element={<MyPage />} />
+			<Route path='/calendar' element={<Calendar />} />
 			<Route path='/edit' element={<Edit />} />
-
 		</Routes>
 	);
 };

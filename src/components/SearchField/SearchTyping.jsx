@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Searchinput } from '../../styles/ContentStyles';
 
-export default function SearchTyping() {
-	const onChange = (e) => {
-		console.log(e.target.value);
+export default function SearchTyping({ setSearchTerm }) {
+	const handleInputChange = (e) => {
+		setSearchTerm(e.target.value); // 검색어 업데이트
 	};
-	const [isInputClicked, setIsInputClicked] = useState(false);
+
 	return (
 		<div>
 			<Searchinput
 				type='text'
-				onChange={onChange}
-				onFocus={() => {
-					setIsInputClicked(true);
-				}}
-				onBlurCapture={() => {
-					setIsInputClicked(false);
-				}}
-				placeholder={isInputClicked === true ? '' : '검색어를 입력하세요'}
+				onChange={handleInputChange}
+				placeholder='검색어를 입력하세요'
 			/>
 		</div>
 	);

@@ -1,0 +1,215 @@
+:root {
+	--primary-clr: #4c6fff;
+	--secondary-clr: #f8f9fa;
+	--text-clr: #333;
+	--light-text: #868e96;
+}
+
+.container {
+	position: relative;
+	width: 1200px;
+	min-height: 850px;
+	margin: 0 auto;
+	padding: 5px;
+	display: flex;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+	width: 90%;
+	padding: 20px;
+}
+
+.calendar {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	color: var(--text-clr);
+	background-color: white;
+	border-radius: 15px;
+}
+
+.calendar .month {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 50px;
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--primary-clr);
+}
+
+.calendar .month .prev,
+.calendar .month .next {
+	cursor: pointer;
+	color: #adb5bd;
+	font-size: 1.5rem;
+}
+
+.calendar .weekdays {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.calendar .weekdays div {
+	width: 14.28%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--light-text);
+}
+
+.calendar .weekdays div:first-child {
+	color: #ff6b6b;
+}
+
+.calendar .days {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 20px;
+	font-size: 1rem;
+}
+
+.calendar .days .day {
+	width: 14.28%;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--text-clr);
+	border-radius: 50%;
+	margin: 5px 0;
+}
+
+.calendar .day:not(.prev-date, .next-date):hover {
+	background-color: var(--secondary-clr);
+	color: var(--primary-clr);
+}
+
+.calendar .days .prev-date,
+.calendar .days .next-date {
+	color: #dee2e6;
+}
+
+.calendar .days .active {
+	background-color: var(--primary-clr);
+	color: white !important;
+}
+
+.calendar .days .today {
+	color: var(--primary-clr);
+	font-weight: 600;
+}
+
+.calendar .days .event {
+	position: relative;
+	background-color: rgba(76, 111, 255, 0.1);
+	border-radius: 20px;
+	color: var(--primary-clr);
+}
+
+.add-event-wrapper {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-event-header {
+	color: var(--text-clr);
+}
+
+.add-event-input input {
+	border: 1px solid #e9ecef;
+	border-radius: 8px;
+	padding: 10px;
+}
+
+.add-event-btn {
+	background-color: var(--primary-clr);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.add-event-btn:hover {
+	background-color: #3557e0;
+}
+
+.right {
+	background-color: var(--secondary-clr);
+	border-radius: 15px;
+	margin-left: 20px;
+}
+
+.event {
+	background-color: white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.event-info {
+	padding: 15px;
+}
+
+.event-title {
+	color: var(--text-clr);
+	font-weight: 500;
+}
+
+.event-dates {
+	color: var(--light-text);
+	font-size: 0.9rem;
+}
+
+.edit-btn,
+.delete-btn {
+	border-radius: 6px;
+	padding: 8px 15px;
+	font-size: 0.9rem;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.edit-btn {
+	background-color: #4c6fff;
+	color: white;
+}
+
+.delete-btn {
+	background-color: #ff6b6b;
+	color: white;
+}
+
+@media screen and (max-width: 1000px) {
+	.container {
+		flex-direction: column;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.right {
+		margin-left: 0;
+		margin-top: 20px;
+	}
+}

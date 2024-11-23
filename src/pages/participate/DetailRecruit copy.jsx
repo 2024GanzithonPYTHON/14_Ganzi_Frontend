@@ -20,6 +20,46 @@ import urllink from '../../components/Participate/img/url-link.png';
 import FormApplyBTN from '../../components/Participate/Button/FormApplyBTN';
 import axios from 'axios';
 
+//const DetailRecruit = () => {
+//	const { projectId } = useParams();
+//	const [recruite, setRecruite] = useState({});
+//	const TOKEN =
+//		'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWRldzExMTIiLCJsb2dpbklkIjoic2FkZXcxMTEyIiwiaWF0IjoxNzMyMjk0OTQ5LCJleHAiOjE3MzIyOTU2Njl9.-vpxLyZdT_b8tZll9tkfk7NC1ynYnnpfAfNCfYvq0OY';
+//	useEffect(() => {
+//		const fetchData = async () => {
+//			if (!projectId) {
+//				console.error('No projectId available');
+//				return;
+//			}
+
+//			try {
+//				const baseURL = 'https://prolink123.store';
+//				const response = await axios.get(
+//					`${baseURL}/api/project/${projectId}`,
+//					{
+//						headers: {
+//							Authorization: `Bearer ${TOKEN}`,
+//							'Content-Type': 'application/json',
+//							mode: 'cors', // CORS 모드 설정
+//						},
+//					}
+//				);
+
+//				console.log('받은 데이터:', response.data);
+//				setRecruite(response.data);
+//			} catch (error) {
+//				console.error('Error fetching project data:', error);
+//			}
+//		};
+
+//		fetchData();
+//	}, [projectId]);
+//	// * 프로젝트 정보를 표시하는 내부 컴포넌트
+//	// * @param {Object} props - 컴포넌트 props
+//	// * @param {string} props.title - 정보의 제목
+//	// * @param {string} props.result - 정보의 내용
+/////////
+
 const DetailRecruit = () => {
 	const [projectData, setProjectData] = useState([]);
 	const [recruite, setRecruite] = useState(null);
