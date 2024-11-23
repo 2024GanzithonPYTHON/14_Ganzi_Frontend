@@ -353,7 +353,7 @@ const Calendar = () => {
 										className='edit-btn'
 										onClick={() => handleEditEvent(event)}
 									>
-										Edit
+										수정하기
 									</button>
 									<button
 										className='delete-btn'
