@@ -1,71 +1,61 @@
+// AiMeeting.js
 import React, { useEffect, useState } from 'react';
-import AiList from './AiList';
-import { Div4, FloatingIcon } from '../../../styles/Partici_Mang/AIstyles';
-import GPTICON from '../Mpics/openai_flaoting_button.png';
-import GptModal from '../../../pages/manage/GptModal';
 import axios from 'axios';
+import AiList from './AiList';
 
-const AIMeeting = ({ projectId }) => {
-	const [meetingData, setMeetingData] = useState([]); // 회의 데이터 상태
-	const [isModalOpen, setIsModalOpen] = useState(false);
+const AiMeeting = () => {
+	const [projectData, setProjectData] = useState({
+		projectName: '',
+		title: '',
+		summaries: [],
+	});
+	const [loading, setLoading] = useState(true);
 
-	// 서버에서 회의 데이터를 가져오는 함수
-	const fetchMeetingData = async () => {
-		try {
-			const response = await axios.get(`/api/project/${projectId}/meeting`, {
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
-			console.log('받은 데이터:', response.data);
-			setMeetingData(response.data); // 서버에서 가져온 데이터 설정
-		} catch (error) {
-			console.error('Error fetching meeting data:', error);
-		}
-	};
-
-	// 모달에서 데이터를 POST한 후 리스트 갱신
-	const handleDataUpdate = () => {
-		fetchMeetingData(); // 새 데이터를 가져옴
-	};
-
-	// 초기 데이터 로드
 	useEffect(() => {
-		fetchMeetingData();
-	}, [projectId]);
+		const fetchAiSummaries = async () => {
+			try {
+				const response = await axios.get('/api/project/active', {
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+						'Content-Type': 'application/json',
+					},
+				});
 
-	const handelOpenModal = () => {
-		setIsModalOpen(true);
-	};
+				const apiData = response.data;
+				console.log('받은 데이터:', apiData);
 
-	const handelCloseModal = () => {
-		setIsModalOpen(false);
-	};
+				// 프로젝트 데이터 구조화
+				setProjectData({
+					projectName: apiData.projectName || '',
+					title: apiData.title || '',
+					summaries: apiData.userProjectResponses
+						? apiData.userProjectResponses.map((item) => ({
+								message: item.message, // 주제
+								result: item.result, // 요약
+						  }))
+						: [],
+				});
+			} catch (error) {
+				console.error('Error fetching AI summaries:', error);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchAiSummaries();
+	}, []);
+
+	if (loading) {
+		return <p>Loading...</p>;
+	}
 
 	return (
-		<>
-			<Div4>
-				{/* AiList에 meetingData 전달 */}
-				<AiList meetingData={meetingData} />
-			</Div4>
-
-			{/* 플로팅 버튼 */}
-			<FloatingIcon
-				src={GPTICON}
-				alt='GPT_floating_Icon'
-				onClick={handelOpenModal}
-			/>
-
-			{/* 모달 */}
-			{isModalOpen && (
-				<GptModal
-					onClose={handelCloseModal}
-					projectId={projectId}
-					onDataUpdate={handleDataUpdate} // 데이터 업데이트 핸들러 전달
-				/>
-			)}
-		</>
+		<div>
+			{projectData.projectName && <h1>프로젝트: {projectData.projectName}</h1>}
+			{projectData.title && <h2>프로젝트 제목: {projectData.title}</h2>}
+			<AiList aiSummaries={projectData.summaries} />
+		</div>
 	);
 };
 
-export default AIMeeting;
+export default AiMeeting;

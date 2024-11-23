@@ -1,33 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { AiListGPT, AiListperson } from '../../../styles/Partici_Mang/AIstyles';
 
-const AiList = ({ projectId }) => {
-	const [aiSummaries, setAiSummaries] = useState([]); // 요약 데이터 상태
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get(`/api/project/${projectId}/meeting`, {
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				});
-
-				console.log('받은 데이터:', response.data);
-				setAiSummaries(response.data); // 요약 데이터 설정
-			} catch (error) {
-				console.error('Error fetching AI summaries:', error);
-			}
-		};
-
-		fetchData();
-	}, [projectId]);
-
+const AiList = ({ aiSummaries }) => {
 	return (
 		<div>
 			<h1>AI 요약 목록</h1>
-			{aiSummaries.length > 0 ? (
+			{aiSummaries && aiSummaries.length > 0 ? (
 				<ul>
 					{aiSummaries.map((summary, index) => (
 						<li key={index}>
