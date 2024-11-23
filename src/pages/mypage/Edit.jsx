@@ -90,9 +90,7 @@ const Edit = () => {
   return (
     <>
     <LoginAfterHeader />
-      <UI.Container>
-        <UserEdit />
-      </UI.Container>
+     <UserEdit />
     </>
   );
 };

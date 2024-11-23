@@ -14,9 +14,10 @@ import ButtonIcon from '../../assets/icons/Button.svg';
 
 const GptModal = ({ onClose, projectId }) => {
 	const [title, setTitle] = useState(''); // 제목 상태
-	const [inputText, setInputText] = useState('내용: '); // 기본값 설정
+	const [inputText, setInputText] = useState('주제: '); // 기본값 설정
 	const [chatResult, setChatResult] = useState(''); // 서버 응답 데이터
-	const token = localStorage.getItem('accessToken');
+	const token = localStorage.getItem('accessToken'); // 로컬 스토리지에서 토큰 가져오기
+
 	// 제목 입력 핸들러
 	const handleTitleChange = (event) => {
 		setTitle(event.target.value); // 입력값을 title로 설정
@@ -52,7 +53,7 @@ const GptModal = ({ onClose, projectId }) => {
 
 			// API 요청 보내기
 			const response = await axios.post(
-				`/api/project/${projectId}/meeting`,
+				`/api/project/${projectId}/meeting`, // 백틱 사용으로 URL 구성
 				requestData, // 요청 데이터
 				{
 					headers: {
@@ -76,7 +77,6 @@ const GptModal = ({ onClose, projectId }) => {
 		} catch (error) {
 			console.error('Error sending chat:', error);
 			alert('채팅 전송에 실패했습니다.');
-			onClose();
 		}
 	};
 
