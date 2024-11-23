@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../axiosConfig';
 import * as DB from '../../styles/Button/DefaultButtonStyle';
 
 const DefaultButton = ({
@@ -58,7 +58,6 @@ const DefaultButton = ({
           window.alert('등록에 실패했습니다.');
         }
       } else {
-        // 네트워크 에러 또는 기타 이유
         console.error('에러 발생:', error.message);
         window.alert('에러가 발생했습니다. 다시 시도해주세요.');
       }
