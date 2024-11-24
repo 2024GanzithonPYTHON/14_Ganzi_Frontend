@@ -1,4 +1,9 @@
 import React from 'react';
+import LoginAfterHeader from '../../components/Header/LoginAfterHeader';
+import UserInformation from '../../components/user/UserInformation';
+import UserWithdraw from '../../components/user/UserWithdraw';
+import UserEdit from '../../pages/mypage/Edit';
+
 
 
 const MyPage = ({ }) => {
@@ -6,7 +11,9 @@ const MyPage = ({ }) => {
 
   return (
     <>
-        <div>mypage 페이지입니다.</div>
+        <LoginAfterHeader />
+        <UserInformation />
+        <UserWithdraw />
     </>
   )
 }
